@@ -1,0 +1,260 @@
+no service password-encryption
+!
+!
+!
+!
+hostname TN6320
+!
+enable password LOOP
+!
+!
+username ADMIN password 8 30403e0e4eae64a0
+!
+!
+!
+qos enable
+management ip address 192.168.220.165/24
+management route add gateway 192.168.220.254
+snmp-server enable 
+snmp-server system-contact Name: FAE Tel:+886-3-5787696, FAX:+886-3-5787695, Ema
+il: FAE@loop.com.tw
+snmp-server system-location 8F, No.8, Hsin Ann Rd., Science-Based Industrial Par
+k Hsinchu, 30078 Taiwan
+snmp-server view IP6320 included .1 
+snmp-server community public read-write view IP6320 
+snmp-server version v1
+snmp-server trap target-address 192.168.57.81 community public 
+!
+snmp-server trap enable vrrp
+snmp-server trap enable igmp snooping
+snmp-server trap enable ospf
+snmp-server trap enable pim
+snmp-server trap enable system
+snmp-server trap enable coldstart 
+snmp-server trap enable warmstart 
+snmp-server trap enable linkdown 
+snmp-server trap enable linkup 
+!
+vlan database
+ vlan 2,71-88,220-222,254
+ vlan 1 replace dscp
+ vlan 2 name vlan2
+ vlan 71 name vlan71
+[7m--More--[m
+ vlan 72 name vlan72
+ vlan 73 name vlan73
+ vlan 74 name vlan74
+ vlan 75 name vlan75
+ vlan 76 name vlan76
+ vlan 77 name vlan77
+ vlan 78 name vlan78
+ vlan 79 name vlan79
+ vlan 80 name vlan80
+ vlan 81 name vlan81
+ vlan 82 name vlan82
+ vlan 83 name vlan83
+ vlan 84 name vlan84
+ vlan 85 name vlan85
+ vlan 86 name vlan86
+ vlan 87 name vlan87
+ vlan 88 name vlan88
+ vlan 220 name vlan220
+ vlan 221 name PBX
+ vlan 222 name cam
+ vlan 254 name internet
+!
+interface eth-0-1
+ switchport access vlan 220
+!
+interface eth-0-2
+ switchport access vlan 220
+!
+interface eth-0-3
+ switchport access vlan 220
+!
+interface eth-0-4
+ switchport access vlan 220
+!
+interface eth-0-5
+ switchport access vlan 220
+!
+interface eth-0-6
+ switchport access vlan 220
+!
+interface eth-0-7
+ switchport access vlan 220
+!
+interface eth-0-8
+ switchport access vlan 220
+!
+interface eth-0-9
+ switchport access vlan 220
+!
+interface eth-0-10
+ switchport access vlan 220
+!
+interface eth-0-11
+ switchport access vlan 220
+!
+interface eth-0-12
+ switchport access vlan 220
+!
+interface eth-0-13
+ switchport access vlan 220
+!
+interface eth-0-14
+ switchport access vlan 220
+!
+interface eth-0-15
+ switchport access vlan 220
+!
+interface eth-0-16
+ switchport access vlan 220
+!
+interface eth-0-17
+ switchport access vlan 220
+!
+interface eth-0-18
+ switchport access vlan 220
+!
+interface eth-0-19
+ switchport access vlan 220
+!
+interface eth-0-20
+ switchport access vlan 220
+!
+interface eth-0-21
+ switchport access vlan 220
+!
+interface eth-0-22
+ switchport access vlan 220
+!
+interface eth-0-23
+ switchport access vlan 220
+!
+interface eth-0-24
+ switchport access vlan 220
+!
+interface eth-0-25
+!
+interface eth-0-26
+!
+interface eth-0-27
+!
+interface eth-0-28
+!
+interface eth-0-29
+!
+interface eth-0-30
+!
+interface eth-0-31
+!
+interface eth-0-32
+!
+interface eth-0-33
+ switchport access vlan 221
+!
+interface eth-0-34
+ switchport access vlan 221
+!
+interface eth-0-35
+ switchport access vlan 221
+!
+interface eth-0-36
+ switchport access vlan 221
+!
+interface eth-0-37
+ switchport access vlan 222
+!
+interface eth-0-38
+ switchport access vlan 222
+!
+interface eth-0-39
+ switchport access vlan 222
+!
+interface eth-0-40
+ switchport access vlan 222
+!
+interface eth-0-41
+ switchport access vlan 222
+!
+[7m--More--[m
+interface eth-0-42
+ switchport access vlan 222
+!
+interface eth-0-43
+ switchport access vlan 254
+!
+interface eth-0-44
+ switchport access vlan 254
+!
+interface eth-0-45
+ media-type sfp
+ switchport access vlan 220
+!
+interface eth-0-46
+ media-type sfp
+!
+interface eth-0-47
+ media-type sfp
+!
+interface eth-0-48
+ switchport access vlan 220
+!
+interface vlan1
+ ip address dhcp
+!
+interface vlan2
+!
+interface vlan220
+ description servervlan
+ no ip redirects 
+ no ip unreachables 
+ ip address 192.168.220.254/24
+!
+interface vlan221
+ description pbxlan
+ no ip redirects 
+ no ip unreachables 
+ ip address 192.168.221.254/24
+!
+interface vlan222
+ description camvlan
+ no ip redirects 
+ no ip unreachables 
+ ip address 192.168.222.254/24
+!
+interface vlan254
+ description Internet
+ no ip redirects 
+ no ip unreachables 
+ ip address 192.168.200.254/24
+!
+router rip
+ network 192.168.200.0/24
+ network 192.168.220.0/24
+ network 192.168.221.0/24
+ network 192.168.222.0/24
+!
+ip route 0.0.0.0/0 192.168.200.239
+ip route 10.4.0.0/16 192.168.220.253
+ip route 10.132.0.0/16 192.168.220.253
+ip route 172.16.11.0/24 192.168.220.253
+ip route 172.16.41.0/24 192.168.220.253
+ip route 192.168.1.0/24 192.168.220.253
+ip route 192.168.11.0/24 192.168.220.253
+ip route 192.168.12.0/24 192.168.220.253
+ip route 192.168.13.0/24 192.168.220.253
+ip route 192.168.15.0/24 192.168.220.253
+ip route 192.168.57.0/24 192.168.220.253
+ip route 192.168.100.0/24 192.168.220.253
+line con 0
+ no line-password
+ no login
+line vty 0 7
+ exec-timeout 35791 0
+ privilege level 4
+ no line-password
+ no login
+!
+end

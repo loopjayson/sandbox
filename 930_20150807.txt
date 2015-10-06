@@ -1,0 +1,250 @@
+system account add ADMIN admin 
+
+system account password ADMIN enable 78204f1d1d4cf59ba9db03a97b2a21af47d4d19e
+
+system account add MIS admin 
+
+system account password MIS enable 767573e60e442610f12c212f876871709d7fc7a6
+
+storm set broadcast enable 1 20
+
+storm set multicast enable 1 20
+
+system access telnet enable
+
+system access web enable
+
+interface intf1/0/1 flowctrl both enable 
+
+interface intf1/0/1 nway force 1000 full slave 
+
+interface intf1/1/1 flowctrl both enable 
+
+interface intf1/1/2 flowctrl both enable 
+
+interface intf1/1/3 flowctrl both enable 
+
+interface intf1/1/4 flowctrl both enable 
+
+interface intf1/1/5 flowctrl both enable 
+
+interface intf1/1/6 flowctrl both enable 
+
+interface intf1/1/7 flowctrl both enable 
+
+interface intf1/1/8 flowctrl both enable 
+
+interface intf1/2/2 flowctrl both enable 
+
+interface intf1/2/3 flowctrl both enable 
+
+interface intf1/2/4 flowctrl both enable 
+
+interface intf1/2/5 flowctrl both enable 
+
+interface intf1/2/6 flowctrl both enable 
+
+interface intf1/2/7 flowctrl both enable 
+
+interface intf1/2/8 flowctrl both enable 
+
+interface intf1/3/1 flowctrl both enable 
+
+interface intf1/3/2 flowctrl both enable 
+
+interface intf1/3/3 flowctrl both enable 
+
+interface intf1/3/4 flowctrl both enable 
+
+interface intf1/3/5 flowctrl both enable 
+
+interface intf1/3/6 flowctrl both enable 
+
+interface intf1/3/7 flowctrl both enable 
+
+interface intf1/3/8 flowctrl both enable 
+
+link_aggregation group activate 1 intf1/0/1
+
+vlan create 21 1
+
+vlan add 21 untag intf1/1/1,intf1/2/2,intf1/2/(4-5),intf1/3/2 
+
+vlan add 21 tag trunk1/1
+
+vlan create 22 1
+
+vlan add 22 untag intf1/1/2,intf1/1/4,intf1/2/8,intf1/3/3,intf1/3/6,intf1/3/8 
+
+vlan add 22 tag trunk1/1
+
+vlan create 37 1
+
+vlan add 37 tag intf1/2/1,trunk1/1 
+
+vlan create 23 1
+
+vlan add 23 untag intf1/1/5,intf1/3/1 
+
+vlan add 23 tag trunk1/1
+
+vlan create 24 1
+
+vlan add 24 tag intf1/3/4,trunk1/1 
+
+vlan create 25 1
+
+vlan add 25 untag intf1/1/7,intf1/2/7 
+
+vlan add 25 tag trunk1/1
+
+vlan create 26 1
+
+vlan add 26 tag intf1/1/8,intf1/2/3,intf1/2/6,trunk1/1 
+
+vlan create 27 1
+
+vlan add 27 tag intf1/2/1,trunk1/1 
+
+vlan create 28 1
+
+vlan add 28 tag intf1/1/8,intf1/2/3,intf1/2/6,trunk1/1 
+
+vlan create 55 1
+
+vlan add 55 tag intf1/3/4,trunk1/1 
+
+vlan create 56 1
+
+vlan add 56 tag intf1/3/4,trunk1/1 
+
+vlan create 57 1
+
+vlan add 57 tag intf1/3/4,trunk1/1 
+
+vlan create 58 1
+
+vlan add 58 tag intf1/3/4,trunk1/1 
+
+link_aggregation group add 1 intf1/0/(2-4) 
+
+system ip snmp_port 192.168.9.30/24 
+
+system route static add 0.0.0.0/0 192.168.9.254 snmp 
+
+spantree setup enable 
+
+mirroring setup enable 1
+
+system sntp interval 300 
+
+system sntp server add 1 192.168.100.252 
+
+system sntp server add 2 192.168.100.253 
+
+system sntp setup enable 
+
+filter set 1 1 permit any source any any destination any any
+
+interface intf1/0/1 spantree setup enable 
+
+interface intf1/1/1 spantree setup enable 
+
+interface intf1/1/2 spantree setup enable 
+
+interface intf1/1/3 spantree setup enable 
+
+interface intf1/1/4 spantree setup enable 
+
+interface intf1/1/5 spantree setup enable 
+
+interface intf1/1/6 spantree setup enable 
+
+interface intf1/1/7 spantree setup enable 
+
+interface intf1/1/8 spantree setup enable 
+
+interface intf1/2/1 spantree setup enable 
+
+interface intf1/2/2 spantree setup enable 
+
+interface intf1/2/3 spantree setup enable 
+
+interface intf1/2/4 spantree setup enable 
+
+interface intf1/2/5 spantree setup enable 
+
+interface intf1/2/6 spantree setup enable 
+
+interface intf1/2/7 spantree setup enable 
+
+interface intf1/2/8 spantree setup enable 
+
+interface intf1/3/1 spantree setup enable 
+
+interface intf1/3/2 spantree setup enable 
+
+interface intf1/3/3 spantree setup enable 
+
+interface intf1/3/4 spantree setup enable 
+
+interface intf1/3/5 spantree setup enable 
+
+interface intf1/3/6 spantree setup enable 
+
+interface intf1/3/7 spantree setup enable 
+
+interface intf1/3/8 spantree setup enable 
+
+interface intf1/1/1 vlan pvid 21 
+
+interface intf1/1/1 vlan ingress_filter enable 
+
+interface intf1/1/2 vlan pvid 22 
+
+interface intf1/1/2 vlan ingress_filter enable 
+
+interface intf1/1/3 vlan ingress_filter enable 
+
+interface intf1/1/4 vlan pvid 22 
+
+interface intf1/1/4 vlan ingress_filter enable 
+
+interface intf1/1/5 vlan pvid 23 
+
+interface intf1/1/6 vlan ingress_filter enable 
+
+interface intf1/1/7 vlan pvid 25 
+
+interface intf1/2/1 vlan pvid 27 
+
+interface intf1/2/2 vlan pvid 21 
+
+interface intf1/2/4 vlan pvid 21 
+
+interface intf1/2/5 vlan pvid 21 
+
+interface intf1/2/7 vlan pvid 25 
+
+interface intf1/2/8 vlan pvid 22 
+
+interface intf1/3/1 vlan pvid 23 
+
+interface intf1/3/2 vlan pvid 21 
+
+interface intf1/3/3 vlan pvid 22 
+
+interface intf1/3/6 vlan pvid 22 
+
+interface intf1/3/8 vlan pvid 22 
+
+system snmp setting enable
+
+system snmp trap add v1 192.168.9.100 "MIS" 162
+
+system snmp community create "MIS" rw
+
+command succeeded
+
+
+MIS>exit

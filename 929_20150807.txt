@@ -1,0 +1,137 @@
+system account add MIS admin 
+
+system account password MIS enable 767573e60e442610f12c212f876871709d7fc7a6
+
+storm set broadcast enable 1 10
+
+storm set multicast enable 1 10
+
+system access telnet enable
+
+interface intf1/0/1 flowctrl both enable 
+
+interface intf1/0/2 flowctrl both enable 
+
+interface intf1/0/3 flowctrl both enable 
+
+interface intf1/0/4 flowctrl both enable 
+
+interface intf1/1/1 flowctrl both enable 
+
+interface intf1/1/2 flowctrl both enable 
+
+interface intf1/1/3 flowctrl both enable 
+
+interface intf1/1/4 flowctrl both enable 
+
+interface intf1/1/5 flowctrl both enable 
+
+interface intf1/1/6 flowctrl both enable 
+
+interface intf1/1/7 flowctrl both enable 
+
+interface intf1/1/8 flowctrl both enable 
+
+interface intf1/2/1 flowctrl both enable 
+
+interface intf1/2/2 flowctrl both enable 
+
+interface intf1/2/3 flowctrl both enable 
+
+interface intf1/2/4 flowctrl both enable 
+
+interface intf1/2/5 flowctrl both enable 
+
+interface intf1/2/6 flowctrl both enable 
+
+interface intf1/2/7 flowctrl both enable 
+
+interface intf1/2/8 flowctrl both enable 
+
+interface intf1/3/1 flowctrl both enable 
+
+interface intf1/3/2 flowctrl both enable 
+
+interface intf1/3/3 flowctrl both enable 
+
+interface intf1/3/4 flowctrl both enable 
+
+interface intf1/3/5 flowctrl both enable 
+
+interface intf1/3/6 flowctrl both enable 
+
+interface intf1/3/7 flowctrl both enable 
+
+interface intf1/3/8 flowctrl both enable 
+
+vlan create 21 1
+
+vlan add 21 untag intf1/1/(1-8),intf1/2/(1-8),intf1/3/(1-8),intf1/0/1 
+
+system ip snmp_port 192.168.9.29/24 
+
+system route static add 0.0.0.0/0 192.168.9.254 snmp 
+
+spantree setup enable 
+
+system sntp interval 300 
+
+system sntp server add 1 192.168.100.252 
+
+system sntp server add 2 192.168.100.253 
+
+system sntp setup enable 
+
+interface intf1/1/1 spantree setup enable 
+
+interface intf1/1/2 spantree setup enable 
+
+interface intf1/1/3 spantree setup enable 
+
+interface intf1/1/4 spantree setup enable 
+
+interface intf1/1/5 spantree setup enable 
+
+interface intf1/1/6 spantree setup enable 
+
+interface intf1/1/7 spantree setup enable 
+
+interface intf1/1/8 spantree setup enable 
+
+interface intf1/2/1 spantree setup enable 
+
+interface intf1/2/2 spantree setup enable 
+
+interface intf1/2/3 spantree setup enable 
+
+interface intf1/2/4 spantree setup enable 
+
+interface intf1/2/5 spantree setup enable 
+
+interface intf1/2/6 spantree setup enable 
+
+interface intf1/2/7 spantree setup enable 
+
+interface intf1/2/8 spantree setup enable 
+
+interface intf1/3/1 spantree setup enable 
+
+interface intf1/3/2 spantree setup enable 
+
+interface intf1/3/3 spantree setup enable 
+
+interface intf1/3/4 spantree setup enable 
+
+interface intf1/3/5 spantree setup enable 
+
+interface intf1/3/6 spantree setup enable 
+
+interface intf1/3/7 spantree setup enable 
+
+interface intf1/3/8 spantree setup enable 
+
+system snmp setting enable
+
+system snmp trap add v1 192.168.9.100 "MIS" 162
+
+system snmp community create "MIS" rw

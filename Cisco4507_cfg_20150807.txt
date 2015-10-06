@@ -1,0 +1,1003 @@
+version 12.2
+no service pad
+service timestamps debug datetime localtime
+service timestamps log datetime localtime
+service password-encryption
+service compress-config
+service sequence-numbers
+!
+hostname C4500
+!
+boot-start-marker
+boot system bootflash:cat4500-ipbase-mz.122-31.SGA11.bin
+boot system bootflash:cat4500-ipbase-mz.122-31.SGA2.bin
+boot-end-marker
+!
+enable secret 5 $1$b3me$iBCz7WOoMfWOj7Kpn0gIe0
+!
+username jayson password 7 02535D022B0A002E5C
+username genesis password 7 082C4D40081E000543
+aaa new-model
+aaa authentication login default none
+aaa authentication login UA local line
+aaa authentication dot1x default group radius
+!
+aaa session-id common
+clock timezone GMT 8
+ip subnet-zero
+ip wccp web-cache
+no ip domain-lookup
+ip name-server 192.168.100.246
+!
+!
+!
+!
+dot1x system-auth-control
+dot1x guest-vlan supplicant
+power redundancy-mode redundant
+!
+redundancy
+ main-cpu
+  auto-sync standard
+ mode rpr
+no file verify auto
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+spanning-tree uplinkfast
+spanning-tree vlan 1-1005 priority 24576
+spanning-tree vlan 1-1005 forward-time 10
+spanning-tree vlan 1-1005 max-age 14
+!
+vlan internal allocation policy ascending
+!
+interface Port-channel1
+ switchport
+ switchport access vlan 12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,4,21-28
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport
+ switchport access vlan 12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,4,21-28
+ switchport mode trunk
+!
+interface GigabitEthernet1/1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,21-28,37,55-58
+ switchport mode trunk
+ no cdp enable
+!
+interface GigabitEthernet1/2
+ switchport access vlan 2
+ switchport mode access
+!
+interface FastEthernet3/1
+ switchport mode access
+!
+interface FastEthernet3/2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/3
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/4
+ switchport access vlan 5
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/5
+ switchport access vlan 4
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/6
+ switchport access vlan 4
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/7
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/8
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/9
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/10
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/11
+ switchport access vlan 2
+ switchport mode access
+ dot1x pae authenticator
+ dot1x port-control auto
+ dot1x auth-fail vlan 4
+ dot1x guest-vlan 4
+ spanning-tree portfast
+!
+interface FastEthernet3/12
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/13
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/14
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/15
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/16
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/17
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/18
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/19
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/20
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/21
+ switchport access vlan 16
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/22
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/23
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet3/24
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/25
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/26
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/27
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/28
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/29
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/30
+ switchport access vlan 3
+ switchport mode access
+!
+interface FastEthernet3/31
+ switchport access vlan 16
+ switchport mode access
+!
+interface FastEthernet3/32
+ switchport access vlan 100
+ switchport mode access
+!
+interface FastEthernet3/33
+ switchport access vlan 11
+ switchport mode access
+!
+interface FastEthernet3/34
+ switchport access vlan 11
+ switchport mode access
+!
+interface FastEthernet3/35
+ switchport access vlan 32
+ switchport mode access
+!
+interface FastEthernet3/36
+ switchport access vlan 32
+ switchport mode access
+!
+interface FastEthernet3/37
+ switchport access vlan 32
+ switchport mode access
+!
+interface FastEthernet3/38
+ switchport access vlan 32
+ switchport mode access
+!
+interface FastEthernet3/39
+ switchport access vlan 32
+ switchport mode access
+!
+interface FastEthernet3/40
+ switchport access vlan 33
+ switchport mode access
+!
+interface FastEthernet3/41
+ switchport access vlan 33
+ switchport mode access
+!
+interface FastEthernet3/42
+ switchport access vlan 33
+ switchport mode access
+!
+interface FastEthernet3/43
+ switchport access vlan 14
+ switchport mode access
+!
+interface FastEthernet3/44
+ switchport access vlan 14
+ switchport mode access
+!
+interface FastEthernet3/45
+ switchport access vlan 14
+ switchport mode access
+!
+interface FastEthernet3/46
+ switchport access vlan 14
+ switchport mode access
+!
+interface FastEthernet3/47
+ switchport access vlan 15
+ switchport mode access
+!
+interface FastEthernet3/48
+ switchport access vlan 15
+ switchport mode access
+!
+interface GigabitEthernet5/1
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/2
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/3
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/4
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/5
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/6
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/7
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/8
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/9
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/10
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/11
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/12
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/13
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/14
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/15
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/16
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/17
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/18
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/19
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/20
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/21
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/22
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/23
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/24
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/25
+ switchport access vlan 2
+ switchport mode access
+ dot1x pae authenticator
+ dot1x port-control auto
+ dot1x auth-fail vlan 11
+ dot1x guest-vlan 11
+ spanning-tree portfast
+!
+interface GigabitEthernet5/26
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/27
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/28
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/29
+ switchport access vlan 11
+ switchport mode access
+!
+interface GigabitEthernet5/30
+ switchport access vlan 11
+ switchport mode access
+!
+interface GigabitEthernet5/31
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/32
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/33
+ switchport access vlan 12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,4,21-28
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface GigabitEthernet5/34
+ switchport access vlan 12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,4,21-28
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface GigabitEthernet5/35
+ switchport access vlan 12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,4,21-28
+ switchport mode trunk
+ channel-group 2 mode on
+!
+interface GigabitEthernet5/36
+ switchport access vlan 12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,4,21-28
+ switchport mode trunk
+ channel-group 2 mode on
+!
+interface GigabitEthernet5/37
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet5/38
+ switchport access vlan 33
+ switchport mode access
+!
+interface GigabitEthernet5/39
+ switchport access vlan 33
+ switchport mode access
+!
+interface GigabitEthernet5/40
+ switchport access vlan 33
+ switchport mode access
+!
+interface GigabitEthernet5/41
+ switchport access vlan 14
+ switchport mode access
+!
+interface GigabitEthernet5/42
+ switchport access vlan 36
+ switchport mode access
+!
+interface GigabitEthernet5/43
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 9,91-99
+ switchport mode trunk
+ no cdp enable
+!
+interface GigabitEthernet5/44
+ switchport access vlan 17
+ switchport mode access
+!
+interface GigabitEthernet5/45
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 9,91-99
+ switchport mode trunk
+ no cdp enable
+!
+interface GigabitEthernet5/46
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 9,91-99
+ switchport mode trunk
+ no cdp enable
+!
+interface GigabitEthernet5/47
+ switchport access vlan 9
+ switchport mode access
+ no cdp enable
+!
+interface GigabitEthernet5/48
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 9,91-99
+ switchport mode trunk
+ no cdp enable
+!
+interface GigabitEthernet7/1
+!
+interface GigabitEthernet7/2
+!
+interface GigabitEthernet7/3
+!
+interface GigabitEthernet7/4
+!
+interface GigabitEthernet7/5
+!
+interface GigabitEthernet7/6
+!
+interface Vlan1
+ ip address 192.168.101.254 255.255.255.0
+ ip rip advertise 10
+!
+interface Vlan2
+ ip address 192.168.100.164 255.255.255.0
+ ip rip advertise 10
+!
+interface Vlan3
+ ip dhcp relay information trusted
+ ip address 192.168.1.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.59
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan4
+ ip address 192.168.2.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip rip advertise 10
+!
+interface Vlan5
+ ip address 192.168.3.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip rip advertise 10
+!
+interface Vlan9
+ description TEMP
+ ip address 10.9.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan11
+ ip address 10.0.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan12
+ ip address 10.1.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan13
+ ip address 10.2.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan14
+ ip address 10.3.254.254 255.255.0.0
+ ip access-group 114 in
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan15
+ ip address 10.4.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan16
+ description PBX
+ ip address 172.16.11.254 255.255.255.0
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan17
+ description SNMPC-Server
+ ip address 192.168.9.254 255.255.255.0
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan21
+ description IPC01
+ ip address 192.168.10.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan22
+ description RDC01
+ ip address 192.168.11.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan23
+ description RDC02
+ ip address 192.168.12.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan24
+ description LABC
+ ip address 192.168.13.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan25
+ description FAEC
+ ip address 192.168.14.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan26
+ description PPC
+ ip address 192.168.15.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan27
+ description IPC02
+ ip address 192.168.16.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan28
+ description Meeting
+ ip address 192.168.17.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.59
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan31
+ description 8FIP
+ ip address 10.131.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan32
+ description 8FENGI
+ ip address 10.132.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan33
+ description 8FENGIII
+ ip address 10.133.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan34
+ description 8FLAB
+ ip address 10.134.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan35
+ description 8FFAE
+ ip address 10.135.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ ip helper-address 192.168.100.250
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan36
+ ip address 10.136.254.254 255.255.255.0
+ ip rip advertise 10
+!
+interface Vlan37
+ description V-37 192.168.37.0/24
+ ip address 192.168.37.254 255.255.255.0
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip rip advertise 10
+!
+interface Vlan55
+ description V-55 192.168.55.0/24
+ ip address 192.168.55.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan56
+ description V-56 192.168.56.0/24
+ ip address 192.168.56.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan57
+ description V-57 192.168.57.0/24
+ ip address 192.168.57.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan58
+ description V-58 192.168.58.0/24
+ ip address 192.168.58.254 255.255.255.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan91
+ description V-91 10.91.0.0/16
+ ip address 10.91.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan92
+ description V-92 10.92.0.0/16
+ ip address 10.92.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan93
+ description V-93 10.93.0.0/16
+ ip address 10.93.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan94
+ description V-94 10.94.0.0/16
+ ip address 10.94.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan95
+ description V-95 10.95.0.0/16
+ ip address 10.95.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip rip advertise 10
+!
+interface Vlan96
+ description V-96 10.96.0.0/16
+ ip address 10.96.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip rip advertise 10
+!
+interface Vlan97
+ description V-97 10.97.0.0/16
+ ip address 10.97.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan98
+ description V-98 10.98.0.0/16
+ ip address 10.98.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan99
+ description V-99 10.99.0.0/16
+ ip address 10.99.254.254 255.255.0.0
+ ip helper-address 192.168.100.252
+ ip helper-address 192.168.100.253
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip wccp web-cache redirect in
+ ip rip advertise 10
+!
+interface Vlan100
+ description Intra to TP
+ ip address 192.168.254.33 255.255.255.0
+ ip rip advertise 10
+!
+router rip
+ version 2
+ timers basic 10 40 40 60
+ redistribute static
+ passive-interface default
+ network 10.0.0.0
+ network 172.16.0.0
+ network 192.168.1.0
+ network 192.168.3.0
+ network 192.168.9.0
+ network 192.168.10.0
+ network 192.168.11.0
+ network 192.168.12.0
+ network 192.168.13.0
+ network 192.168.14.0
+ network 192.168.15.0
+ network 192.168.16.0
+ network 192.168.17.0
+ network 192.168.37.0
+ network 192.168.55.0
+ network 192.168.56.0
+ network 192.168.57.0
+ network 192.168.58.0
+ network 192.168.100.0
+ network 192.168.101.0
+ network 192.168.254.0
+ neighbor 192.168.254.34
+ no auto-summary
+!
+ip route 0.0.0.0 0.0.0.0 192.168.101.244
+ip route 172.16.1.0 255.255.255.0 192.168.101.244
+ip route 192.168.131.0 255.255.255.0 192.168.100.3
+ip route 192.168.132.0 255.255.255.0 192.168.100.3
+ip route 192.168.200.0 255.255.255.0 192.168.100.4
+ip route 192.168.220.0 255.255.255.0 192.168.100.4
+ip route 192.168.221.0 255.255.255.0 192.168.100.4
+ip route 192.168.222.0 255.255.255.0 192.168.100.4
+ip route 192.168.232.0 255.255.255.0 192.168.100.3
+ip route 192.168.254.16 255.255.255.240 192.168.254.14
+ip http server
+!
+!
+logging trap debugging
+logging facility local4
+logging 192.168.100.131
+access-list 114 permit ip 10.3.0.0 0.0.255.255 any
+access-list 114 deny   ip any any
+!
+snmp-server community loop!@# RO
+snmp-server community public RO
+snmp-server community ^loop^ RO
+radius-server host 192.168.100.253 auth-port 1812 acct-port 1813
+radius-server source-ports 1645-1646
+radius-server key 7 045704091F701E1D
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ password 7 07032E435E29415D4F
+ login authentication UA
+!
+!
+monitor session 1 source interface Fa3/1
+monitor session 1 filter packet-type good rx
+monitor session 1 destination interface Fa3/3
+monitor session 2 source vlan 1 - 2
+monitor session 2 filter packet-type good rx
+monitor session 2 destination interface Fa3/2
+ntp clock-period 17179445
+ntp update-calendar
+ntp server 192.168.254.17
+end

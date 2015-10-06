@@ -1,0 +1,261 @@
+set clock dst-off
+set clock ntp
+set clock timezone 8
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+exit
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth default auth server "Local"
+set auth radius accounting port 1646
+set admin name "root"
+set admin password "nHUWLcrcCbiIcBsBts7MseKtpPI3Yn"
+set admin user "genesis" password "nAZgK4rqNEnLcaDMzstNkHBtAXLGwn" privilege "all"
+set admin user "admin" password "nJ+TLvrEMthPckmBUs1Hk6OtjiEyIn" privilege "all"
+set admin manager-ip 192.168.100.0 255.255.255.0
+set admin manager-ip 172.16.1.1 255.255.255.128
+set admin manager-ip 192.168.40.0 255.255.255.0
+set admin manager-ip 114.32.237.125 255.255.255.255
+set admin manager-ip 192.168.120.0 255.255.255.0
+set admin manager-ip 211.23.53.209 255.255.255.240
+set admin manager-ip 192.168.121.0 255.255.255.0
+set admin http redirect
+set admin mail alert
+set admin mail server-name "192.168.100.246"
+set admin mail mail-addr1 "jayson_wang@loop.com.tw"
+set admin auth timeout 0
+set admin auth server "Local"
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+unset zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+set zone "DMZ" tcp-rst 
+set zone "VLAN" block 
+unset zone "VLAN" tcp-rst 
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+unset zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface "ethernet0/0" zone "Trust"
+set interface "ethernet0/1" zone "DMZ"
+set interface "ethernet0/2" zone "Untrust"
+set interface "tunnel.1" zone "Untrust"
+set interface "tunnel.2" zone "Untrust"
+set interface ethernet0/0 ip 192.168.121.254/24
+set interface ethernet0/0 nat
+unset interface vlan1 ip
+set interface ethernet0/1 ip 10.10.10.254/8
+set interface ethernet0/1 nat
+set interface ethernet0/2 ip 59.120.10.127/24
+set interface ethernet0/2 route
+set interface tunnel.1 ip unnumbered interface ethernet0/2
+set interface tunnel.2 ip unnumbered interface ethernet0/2
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/0 ip manageable
+set interface ethernet0/1 ip manageable
+set interface ethernet0/2 ip manageable
+set interface ethernet0/2 manage ping
+set interface ethernet0/2 manage ssh
+set interface ethernet0/2 manage telnet
+set interface ethernet0/2 manage ssl
+set interface ethernet0/2 manage web
+set interface vlan1 manage mtrace
+set interface ethernet0/2 vip 59.120.10.129 80 "HTTP" 192.168.40.60
+set interface "ethernet0/2" mip 59.120.10.128 host 192.168.120.246 netmask 255.255.255.255 vr "trust-vr"
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set console page 24
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set dns host dns1 168.95.1.1
+set dns host dns2 168.95.192.1
+set dns host dns3 0.0.0.0
+set address "Trust" "10.40.100.40/32" 10.40.100.40 255.255.255.255
+set address "Trust" "172.16.40.0/24" 172.16.40.0 255.255.255.0
+set address "Trust" "172.16.41.0/24" 172.16.41.0 255.255.255.0
+set address "Trust" "192.168.120.0/24" 192.168.120.0 255.255.255.0
+set address "Trust" "192.168.120.246/32" 192.168.120.246 255.255.255.255
+set address "Trust" "192.168.121.0/24" 192.168.121.0 255.255.255.0
+set address "Trust" "192.168.121.253/32" 192.168.121.253 255.255.255.255
+set address "Trust" "192.168.40.0/24" 192.168.40.0 255.255.255.0
+set address "Trust" "192.168.40.205/255.255.255.255" 192.168.40.205 255.255.255.255
+set address "Trust" "192.168.40.206/255.255.255.0" 192.168.40.206 255.255.255.0
+set address "Trust" "192.168.40.206/255.255.255.255" 192.168.40.206 255.255.255.255
+set address "Untrust" "110.188.0.20" 110.188.0.20 255.255.255.255
+set address "Untrust" "112.138.218.114" 112.138.218.114 255.255.255.255
+set address "Untrust" "114.32.237.125/32" 114.32.237.125 255.255.255.255
+set address "Untrust" "114.33.127.1" 114.33.127.1 255.255.255.255 "attack ip"
+set address "Untrust" "122.226.102.229" 122.226.102.229 255.255.255.255 "attack mail"
+set address "Untrust" "122.226.102.31" 122.226.102.31 255.255.255.255
+set address "Untrust" "122.226.102.61" 122.226.102.61 255.255.255.255 "attack mail"
+set address "Untrust" "140.132.1.138/32" 140.132.1.138 255.255.255.255
+set address "Untrust" "172.16.1.0/24" 172.16.1.0 255.255.255.0
+set address "Untrust" "182.147.243.99" 182.147.243.99 255.255.255.255 "attack fw"
+set address "Untrust" "192.168.1.0/24" 192.168.1.0 255.255.255.0
+set address "Untrust" "192.168.100.0/24" 192.168.100.0 255.255.255.0
+set address "Untrust" "8.8.8.8/32" 8.8.8.8 255.255.255.255
+set address "Untrust" "Arrive IP_118.69.224.172" 118.69.224.172 255.255.255.255 "telnet for Arrive check machine"
+set group address "Trust" "VPN_Taipei"
+set group address "Trust" "VPN_Taipei" add "192.168.121.0/24"
+set group address "Trust" "VPN_Taipei" add "192.168.40.0/24"
+set group address "Untrust" "block attack ip"
+set group address "Untrust" "block attack ip" add "110.188.0.20"
+set group address "Untrust" "block attack ip" add "112.138.218.114"
+set group address "Untrust" "block attack ip" add "114.33.127.1"
+set group address "Untrust" "block attack ip" add "122.226.102.229"
+set group address "Untrust" "block attack ip" add "122.226.102.31"
+set group address "Untrust" "block attack ip" add "122.226.102.61"
+set group address "Untrust" "block attack ip" add "182.147.243.99"
+set group address "Untrust" "VPN_HsicChu"
+set group address "Untrust" "VPN_HsicChu" add "172.16.1.0/24"
+set group address "Untrust" "VPN_HsicChu" add "192.168.1.0/24"
+set group address "Untrust" "VPN_HsicChu" add "192.168.100.0/24"
+set user "ikeuser" uid 2
+set user "ikeuser" ike-id u-fqdn "ikeuser@loop.com" share-limit 1
+set user "ikeuser" type  ike
+set user "ikeuser" "enable"
+set user "test" uid 3
+set user "test" type  xauth
+set user "test" password "VG8uL/9iNIB4F7sy74CDmv1tqRnkH7jElw=="
+unset user "test" type auth
+set user "test" "enable"
+set user-group "IKE-Group" id 2
+set user-group "IKE-Group" user "ikeuser"
+set user-group "Xauth-Group" id 4
+set user-group "Xauth-Group" user "test"
+set ike gateway "Gateway for Any" address 172.17.1.189 Main outgoing-interface "ethernet0/2" preshare "iJIe98iLNStpOMsS+rCyarQVf2nCQQmhzg==" sec-level standard
+set ike gateway "HsinChu_211.23.52.47" address 211.23.52.47 Main outgoing-interface "ethernet0/2" preshare "iVCnqiW/NIox8bsPfTCGesgoaGnJ0CAqnA==" sec-level compatible
+set ike gateway "RemoteVPN_GW" dialup "ikeuser" Aggr outgoing-interface "ethernet0/2" preshare "H2LprmbmNOqESNs8qiCH1Q2u+hn8ZfL3Xg==" proposal "pre-g2-des-md5"
+unset ike gateway "RemoteVPN_GW" nat-traversal
+set ike gateway "RemoteVPN_GW" xauth server "Local" user "test"
+set ike gateway "RemoteVPN_GW" xauth server auth-method chap pap
+unset ike gateway "RemoteVPN_GW" xauth do-edipi-auth
+set ike respond-bad-spi 1
+set ike gateway "HsinChu_211.23.52.47" heartbeat hello 10
+set ike gateway "HsinChu_211.23.52.47" heartbeat reconnect 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "VPN for Any" gateway "Gateway for Any" replay tunnel idletime 0 sec-level standard
+set vpn "VPN for Any" id 1 bind interface tunnel.1
+set vpn "VPN to HsinChu" gateway "HsinChu_211.23.52.47" replay tunnel idletime 0 sec-level compatible
+set vpn "VPN to HsinChu" monitor optimized rekey
+set vpn "RemoteVPN_IKE" gateway "RemoteVPN_GW" replay tunnel idletime 0 proposal "g2-esp-des-md5" 
+set vpn "RemoteVPN_IKE" monitor
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set scheduler "Arrive" once start 9/15/2009 23:0 stop 9/26/2009 0:1 comment "telent 10.40.100.40"
+set url protocol websense
+exit
+set anti-spam profile ns-profile
+ set sbl default-server enable
+exit
+set vpn "RemoteVPN_IKE" proxy-id local-ip 192.168.121.0/24 remote-ip 255.255.255.255/32 "ANY" 
+set policy id 11 name "block ip 1401321138" from "Trust" to "Untrust"  "Any" "140.132.1.138/32" "ANY" deny 
+set policy id 11
+exit
+set policy id 15 from "Trust" to "Untrust"  "192.168.120.246/32" "Any" "SMTP" deny log 
+set policy id 15
+exit
+set policy id 7 name "Polycom Test" from "Trust" to "Untrust"  "192.168.40.205/255.255.255.255" "Any" "ANY" permit log 
+set policy id 7 disable
+set policy id 7
+set src-address "192.168.40.206/255.255.255.255"
+exit
+set policy id 3 from "Untrust" to "Trust"  "VPN_HsicChu" "VPN_Taipei" "ANY" tunnel vpn "VPN to HsinChu" id 2 pair-policy 5 log 
+set policy id 3
+exit
+set policy id 5 from "Trust" to "Untrust"  "VPN_Taipei" "VPN_HsicChu" "ANY" tunnel vpn "VPN to HsinChu" id 2 pair-policy 3 log 
+set policy id 5
+exit
+set policy id 4 name "OA" from "Trust" to "Untrust"  "192.168.40.0/24" "Any" "ANY" permit log 
+set policy id 4 disable
+set policy id 4
+exit
+set policy id 6 from "Trust" to "Untrust"  "Any" "Any" "ANY" permit log 
+set policy id 6
+exit
+set policy id 10 from "Untrust" to "Trust"  "Dial-Up VPN" "192.168.121.0/24" "ANY" tunnel vpn "RemoteVPN_IKE" id 7 log 
+set policy id 10
+exit
+set policy id 13 name "Block Attack" from "Untrust" to "Trust"  "block attack ip" "10.40.100.40/32" "ANY" deny log 
+set policy id 13
+set dst-address "172.16.40.0/24"
+set dst-address "172.16.41.0/24"
+set dst-address "192.168.120.0/24"
+set dst-address "192.168.121.0/24"
+set dst-address "192.168.40.0/24"
+exit
+set policy id 12 name "fro TPE mail server" from "Untrust" to "Trust"  "Any" "MIP(59.120.10.128)" "DNS" nat dst ip 192.168.120.246 permit log 
+set policy id 12
+set service "SMTP"
+exit
+set policy id 14 name "WEB CAM access" from "Untrust" to "Trust"  "Any" "VIP(59.120.10.129)" "HTTP" permit log 
+set policy id 14 application "HTTP"
+set policy id 14
+exit
+set policy id 9 from "Untrust" to "Trust"  "Any" "Any" "ANY" permit log 
+set policy id 9 disable
+set policy id 9
+exit
+set syslog config "192.168.100.12"
+set syslog config "192.168.100.12" facilities local0 local0
+set syslog config "192.168.100.12" log traffic
+set syslog src-interface ethernet0/0
+set syslog enable
+set firewall log-self
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+set ntp server "220.130.158.71"
+set ntp server backup1 "59.124.196.84"
+set ntp server backup2 "220.130.158.72"
+set ntp interval 720
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+set source-routing enable
+unset add-default-route
+set route 0.0.0.0/0 interface ethernet0/2 gateway 59.120.10.254 preference 20
+set route 172.16.0.0/16 interface ethernet0/0 gateway 192.168.121.253 preference 20
+set route 192.168.0.0/16 interface ethernet0/0 gateway 192.168.121.253 preference 20
+set route 10.40.0.0/16 interface ethernet0/0 gateway 192.168.121.253 preference 20
+set route 10.41.0.0/16 interface ethernet0/0 gateway 192.168.121.253 preference 20
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

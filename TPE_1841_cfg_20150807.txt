@@ -1,0 +1,105 @@
+version 12.4
+service timestamps debug datetime localtime
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+!
+hostname Taipei_1841_router
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 8192 debugging
+enable secret 5 $1$vD2Y$LXBcK0Uzwmzww0y31ZQ/31
+!
+no aaa new-model
+!
+resource policy
+!
+clock timezone GMT 8
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+ip subnet-zero
+ip cef
+!
+!
+no ip dhcp use vrf connected
+!
+!
+!
+username genesis password 7 04560A080E26495C58
+username jayson password 7 075D721C1B29150A1802
+!
+!
+class-map match-all VOIP_class
+ match access-group name VOIP_ACL
+class-map match-all VNC_class
+ match access-group name VNC_ACL
+!
+!
+policy-map VOIP_policy-map
+ class VOIP_class
+  priority 400
+ class VNC_class
+  priority 200
+policy-map to-HC-QOS_policy-map
+ class class-default
+  shape average 2000000 125000 125000
+  shape max-buffers 10
+  service-policy VOIP_policy-map
+!
+!
+!
+interface FastEthernet0/0
+ description to HinChu 
+ ip address 192.168.254.14 255.255.255.240
+ ip rip advertise 10
+ duplex auto
+ speed auto
+ service-policy output to-HC-QOS_policy-map
+!
+interface FastEthernet0/1
+ description to Taipei_Intra$ES_LAN$
+ ip address 192.168.254.18 255.255.255.240
+ ip rip advertise 10
+ duplex auto
+ speed auto
+!
+router rip
+ version 2
+ timers basic 10 40 40 60
+ passive-interface default
+ network 192.168.254.0
+ neighbor 192.168.254.13
+ neighbor 192.168.254.17
+ no auto-summary
+!
+ip classless
+ip route 192.168.254.0 255.255.255.240 192.168.254.13
+ip route 192.168.254.16 255.255.255.240 192.168.254.17
+!
+ip http server
+!
+ip access-list extended VNC_ACL
+ permit tcp any any eq 5800
+ permit tcp any any eq 5900
+ip access-list extended VOIP_ACL
+ permit ip 172.16.41.0 0.0.0.255 172.16.11.0 0.0.0.255
+!
+snmp-server community ^loop^ RO
+snmp-server community public RO
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ password 7 011F090B4B2B5E5779
+ login local
+!
+ntp clock-period 17178548
+ntp server 192.168.254.17
+end

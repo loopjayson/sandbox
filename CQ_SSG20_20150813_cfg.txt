@@ -1,0 +1,258 @@
+set clock ntp
+set clock timezone 7
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+exit
+set service "VNC OUT" protocol tcp src-port 0-65535 dst-port 5900-5900 
+set service "Mysql" protocol tcp src-port 0-65535 dst-port 3306-3306 
+set service "HTTP8080" protocol tcp src-port 0-65535 dst-port 8080-8080 timeout 1 
+set service "20131" protocol tcp src-port 0-65535 dst-port 20131-20131 
+set service "20132" protocol udp src-port 0-65535 dst-port 20132-20132 
+set service "20133" protocol tcp src-port 0-65535 dst-port 20133-20133 
+set service "20134" protocol tcp src-port 0-65535 dst-port 20134-20134 
+set service "HTTP8088" protocol tcp src-port 0-65535 dst-port 8088-8088 
+set service "RDP" protocol tcp src-port 0-65535 dst-port 3389-3389 
+set service "SNMP161" protocol tcp src-port 0-65535 dst-port 161-161 
+set service "SNMP161" + udp src-port 0-65535 dst-port 161-161 
+set service "HTTP8383" protocol tcp src-port 0-65535 dst-port 8383-8383 
+set service "VIP" protocol tcp src-port 0-65535 dst-port 0-65535 
+set service "VIP" + udp src-port 0-65535 dst-port 0-65535 
+set service "HTTP8443" protocol tcp src-port 0-65535 dst-port 8443-8443 
+set service "SSL" protocol tcp src-port 0-65535 dst-port 443-443 
+set service "SSL" + udp src-port 0-65535 dst-port 443-443 
+set service "SNMP162" protocol udp src-port 0-65535 dst-port 162-162 
+set service "ANYONE" protocol udp src-port 0-65535 dst-port 0-65535 
+set service "ANYONE" + tcp src-port 0-65535 dst-port 0-65535 
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth default auth server "Local"
+set auth radius accounting port 1646
+set admin name "admin"
+set admin password "nPr1NCrrDyUNc8INssCAtDPtgWAu2n"
+set admin user "jayson" password "nP1wC8r/Jg/LcJaJgslIeZNtnEGzZn" privilege "all"
+set admin user "genesis" password "nAZgK4rqNEnLcaDMzstNkHBtAXLGwn" privilege "all"
+set admin manager-ip 211.23.53.0 255.255.255.0
+set admin manager-ip 192.168.0.0 255.255.255.0
+set admin manager-ip 114.32.237.125 255.255.255.255
+set admin manager-ip 118.163.53.233 255.255.255.240
+set admin manager-ip 192.168.100.0 255.255.255.0
+set admin auth web timeout 10
+set admin auth dial-in timeout 3
+set admin auth server "Local"
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+set zone "DMZ" tcp-rst 
+set zone "VLAN" block 
+unset zone "VLAN" tcp-rst 
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface "ethernet0/0" zone "Untrust"
+set interface "ethernet0/1" zone "DMZ"
+set interface "bgroup0" zone "Trust"
+set interface bgroup0 port ethernet0/2
+set interface bgroup0 port ethernet0/3
+set interface bgroup0 port ethernet0/4
+unset interface vlan1 ip
+set interface ethernet0/0 ip 124.162.57.210/28
+set interface ethernet0/0 route
+set interface bgroup0 ip 192.168.0.1/24
+set interface bgroup0 nat
+set interface ethernet0/0 gateway 124.162.57.209
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/0 ip manageable
+set interface bgroup0 ip manageable
+set interface ethernet0/0 manage ping
+set interface ethernet0/0 manage ssh
+set interface ethernet0/0 manage web
+set interface bgroup0 manage mtrace
+set interface ethernet0/0 monitor track-ip ip
+set interface ethernet0/0 monitor track-ip dynamic
+set interface ethernet0/0 vip 124.162.57.213 8080 "HTTP8080" 192.168.0.59
+set interface ethernet0/0 vip 124.162.57.213 + 3000 "SSL" 192.168.0.9
+set interface ethernet0/0 vip interface-ip
+set interface ethernet0/0 vip 124.162.57.211 8383 "HTTP8080" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 8080 "HTTP8080" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 143 "IMAP" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 25 "SMTP" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 21 "FTP" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 110 "POP3" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 79 "FINGER" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 389 "LDAP" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.211 + 4000 "VNC OUT" 192.168.0.5 manual
+set interface ethernet0/0 vip 124.162.57.212 21 "FTP" 192.168.0.5 manual
+set interface "serial0/0" modem settings "USR" init "AT&F"
+set interface "serial0/0" modem settings "USR" active
+set interface "serial0/0" modem speed 115200
+set interface "serial0/0" modem retry 3
+set interface "serial0/0" modem interval 10
+set interface "serial0/0" modem idle-time 10
+set flow tcp-mss
+unset flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set dns host dns1 0.0.0.0
+set dns host dns2 0.0.0.0
+set dns host dns3 0.0.0.0
+set address "Trust" "192.168.0.0/24" 192.168.0.0 255.255.255.0
+set address "Untrust" "192.168.100.0/24" 192.168.100.0 255.255.255.0
+set address "Untrust" "hsinchu 10.0.0.0/16" 10.0.0.0 255.255.0.0
+set address "Untrust" "Hsinchu_10.93.0.0" 10.93.0.0 255.255.0.0 "for MVS test"
+set address "Untrust" "Hsinchu_192.168.13.0" 192.168.13.0 255.255.255.0 "Hsinchu_192.168.13.0 Segment"
+set address "Untrust" "Hsinchu_192.168.55.0" 192.168.55.0 255.255.255.0 "Hsinchu_192.168.55.0 Segment"
+set address "Untrust" "Hsinchu_192.168.56.0" 192.168.56.0 255.255.255.0 "Hsinchu_192.168.56.0 Segment"
+set address "Untrust" "Hsinchu_192.168.57.0" 192.168.57.0 255.255.255.0 "Hsinchu_192.168.57.0 Segment"
+set address "Untrust" "Hsinchu_192.168.58.0" 192.168.58.0 255.255.255.0 "Hsinchu_192.168.58.0 Segment"
+set address "Untrust" "TPE_10.41" 10.41.0.0 255.255.0.0
+set ike gateway "To_HsinChu" address 211.23.52.47 Main outgoing-interface "ethernet0/0" preshare "ejcUWKBlNpB399stCWCE/KAMDaneEiie8Q==" sec-level compatible
+set ike respond-bad-spi 1
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "ChangChi_to_HsinChu" gateway "To_HsinChu" no-replay tunnel idletime 0 sec-level standard
+set vpn "ChangChi_to_HsinChu" monitor optimized rekey
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set url protocol websense
+exit
+set policy id 5 name "Chungchi to Hsinchu_192.168.13" from "Untrust" to "Trust"  "Hsinchu_192.168.13.0" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x15 pair-policy 4 log count 
+set policy id 5
+set log session-init
+exit
+set policy id 4 name "Chungchi to Hsinchu_192.168.13" from "Trust" to "Untrust"  "192.168.0.0/24" "Hsinchu_192.168.13.0" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x15 pair-policy 5 log count 
+set policy id 4
+set log session-init
+exit
+set policy id 16 name "Chungchi to Hsinchu_192.168.55" from "Trust" to "Untrust"  "192.168.0.0/24" "Hsinchu_192.168.55.0" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x16 pair-policy 15 log count 
+set policy id 16
+set log session-init
+exit
+set policy id 18 name "Chungchi to Hsinchu_192.168.56" from "Trust" to "Untrust"  "192.168.0.0/24" "Hsinchu_192.168.56.0" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x17 pair-policy 17 log count 
+set policy id 18
+set log session-init
+exit
+set policy id 20 name "Chungchi to Hsinchu_192.168.57" from "Trust" to "Untrust"  "192.168.0.0/24" "Hsinchu_192.168.57.0" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x18 pair-policy 19 log count 
+set policy id 20
+set log session-init
+exit
+set policy id 9 name "Chungchi to Hsinchu_192.168.58" from "Trust" to "Untrust"  "192.168.0.0/24" "Hsinchu_192.168.58.0" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x19 pair-policy 10 log count 
+set policy id 9
+set log session-init
+exit
+set policy id 15 name "Chungchi to Hsinchu_192.168.55" from "Untrust" to "Trust"  "Hsinchu_192.168.55.0" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x16 pair-policy 16 log count 
+set policy id 15
+set log session-init
+exit
+set policy id 17 name "Chungchi to Hsinchu_192.168.56" from "Untrust" to "Trust"  "Hsinchu_192.168.56.0" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x17 pair-policy 18 log count 
+set policy id 17
+set log session-init
+exit
+set policy id 19 name "Chungchi to Hsinchu_192.168.57" from "Untrust" to "Trust"  "Hsinchu_192.168.57.0" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x18 pair-policy 20 log count 
+set policy id 19
+set log session-init
+exit
+set policy id 10 name "Chungchi to Hsinchu_192.168.58" from "Untrust" to "Trust"  "Hsinchu_192.168.58.0" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x19 pair-policy 9 log count 
+set policy id 10
+set log session-init
+exit
+set policy id 2 name "VPN_To_ChangChi" from "Trust" to "Untrust"  "192.168.0.0/24" "192.168.100.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1b pair-policy 3 log count 
+set policy id 2
+set log session-init
+exit
+set policy id 22 name "Chungchi to Hsinchu_10.93.0.0" from "Trust" to "Untrust"  "192.168.0.0/24" "Hsinchu_10.93.0.0" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1a pair-policy 21 log count 
+set policy id 22
+set log session-init
+exit
+set policy id 7 name "hsinchu 10.0.0.0/16to chunchin" from "Trust" to "Untrust"  "192.168.0.0/24" "hsinchu 10.0.0.0/16" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1c pair-policy 8 log count 
+set policy id 7
+exit
+set policy id 26 name "TPE 10.41.0.0/16 to chunchin" from "Trust" to "Untrust"  "192.168.0.0/24" "TPE_10.41" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1d pair-policy 25 log count 
+set policy id 26
+exit
+set policy id 28 name "CQ -> Internet" from "Trust" to "Untrust"  "192.168.0.0/24" "Any" "ANY" permit log count 
+set policy id 28
+exit
+set policy id 21 name "Chungchi to Hsinchu_10.93.0.0" from "Untrust" to "Trust"  "Hsinchu_10.93.0.0" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1a pair-policy 22 log count 
+set policy id 21
+set log session-init
+exit
+set policy id 3 name "VPN_To_ChangChi" from "Untrust" to "Trust"  "192.168.100.0/24" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1b pair-policy 2 log count 
+set policy id 3
+set log session-init
+exit
+set policy id 8 name "hsinchu 10.0.0.0/16to chunchin" from "Untrust" to "Trust"  "hsinchu 10.0.0.0/16" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1c pair-policy 7 log count 
+set policy id 8
+exit
+set policy id 25 name "TPE 10.41.0.0/16 to chunchin" from "Untrust" to "Trust"  "TPE_10.41" "192.168.0.0/24" "ANY" tunnel vpn "ChangChi_to_HsinChu" id 0x1d pair-policy 26 log count 
+set policy id 25
+exit
+set policy id 6 name "VIP for 192.168.0.21" from "Untrust" to "Trust"  "Any" "VIP(124.162.57.213)" "ANY" permit log count 
+set policy id 6
+exit
+set policy id 23 name "VIP for 124.162.57.211" from "Untrust" to "Trust"  "Any" "VIP(124.162.57.211)" "ANY" permit log count 
+set policy id 23
+exit
+set policy id 29 from "Untrust" to "Trust"  "Any" "192.168.0.0/24" "ANY" permit log count 
+set policy id 29
+exit
+set policy id 30 from "Untrust" to "Trust"  "Any" "VIP(124.162.57.212)" "ANY" permit log count 
+set policy id 30
+exit
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+set ntp interval 120
+set snmp community "public" Read-Write Trap-on traffic version v1  
+set snmp host "public" 192.168.0.0 255.255.255.0 src-interface bgroup0 
+set snmp location "CHONGQING"
+set snmp contact "LOOPTECH"
+set snmp name "ssg20"
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset add-default-route
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

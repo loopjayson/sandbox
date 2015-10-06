@@ -1,0 +1,17 @@
+interface lan1 ip 192.168.100.239/24
+interface wan1 ip 118.163.53.235/24
+system ssh setup enable
+route static add 0.0.0.0/0 118.163.53.254 wan1
+system timezone 8:0
+system ntp server add 220.130.158.71
+system ntp server add 59.124.196.84
+system ntp server add 220.130.158.72
+system ntp setup enable
+system telnet setup enable
+policy ipsec create totpe
+policy ipsec add totpe  l_gw 118.163.53.235 l_net 192.168.100.0/24 r_net 192.168
+.120.0/24 r_gw 118.163.65.229 key psk pfs enable ike v1 isakmp g2-3des-md5 ipsec
+ g2-3des-md5
+loopvpn
+interface wan1 policy ipsec bind totpe
+policy ipsec setup enable

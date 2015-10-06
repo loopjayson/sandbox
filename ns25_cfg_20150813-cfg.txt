@@ -1,0 +1,1511 @@
+set clock ntp
+set clock timezone 7
+set vrouter trust-vr sharable
+unset vrouter "trust-vr" auto-route-export
+set service "8080" protocol tcp src-port 0-65535 dst-port 8080-8080 
+set service "8383" protocol tcp src-port 0-65535 dst-port 8383-8383 
+set service "8888" protocol tcp src-port 0-65535 dst-port 8888-8888 
+set service "android download port" protocol tcp src-port 0-65535 dst-port 5228-5228 
+set service "Dennis_1194" protocol tcp src-port 0-65535 dst-port 1194-1194 
+set service "IRC service" protocol tcp src-port 0-65535 dst-port 6660-7000 
+set service "MSN_1863" protocol tcp src-port 0-65535 dst-port 1863-1863 
+set service "openvpn 943" protocol tcp src-port 0-65535 dst-port 943-943 
+set service "openvpn461" protocol tcp src-port 0-65535 dst-port 461-461 
+set service "port 3128" protocol tcp src-port 0-65535 dst-port 3128-3128 
+set service "Sawmill70" protocol tcp src-port 0-65535 dst-port 8987-8987 
+set service "SSL_8386" protocol tcp src-port 0-65535 dst-port 8386-8386 
+set service "SSMTP" protocol tcp src-port 0-65535 dst-port 26-26 
+set service "tcp2302" protocol tcp src-port 0-65535 dst-port 2302-2302 
+set service "tcp2303" protocol tcp src-port 0-65535 dst-port 2303-2303 
+set service "tcp6106" protocol tcp src-port 0-65535 dst-port 6106-6106 
+set service "tcp6160" protocol tcp src-port 0-65535 dst-port 6160-6160 
+set service "TCP_8888" protocol tcp src-port 0-65535 dst-port 8888-8888 
+set service "VNC_5800" protocol tcp src-port 0-65535 dst-port 5800-5900 
+set service "Web_Min_15000" protocol tcp src-port 0-65535 dst-port 15000-15000 
+set service "Win-Terminal" protocol tcp src-port 0-65535 dst-port 3389-3389 
+set service "Sawmill514" protocol udp src-port 0-65535 dst-port 514-514 timeout never 
+set service "Sawmill514" + udp src-port 514-514 dst-port 0-65535 
+set service "IM_MSNYahoo" protocol tcp src-port 0-65535 dst-port 1863-1863 
+set service "IM_MSNYahoo" + tcp src-port 0-65535 dst-port 5050-5050 
+set service "SPAM_CTL" protocol tcp src-port 0-65535 dst-port 8003-8003 
+set service "SPAM_CTL" + tcp src-port 0-65535 dst-port 22-22 
+set service "SPAM_CTL" + tcp src-port 0-65535 dst-port 30000-30000 
+set service "video" protocol tcp src-port 0-65535 dst-port 0-1000 
+set service "video" + udp src-port 0-65535 dst-port 0-1000 
+set service "vnc" protocol tcp src-port 0-65535 dst-port 5800-5800 
+set service "vnc" + tcp src-port 0-65535 dst-port 5900-5900 
+set service "VNC_10000" protocol tcp src-port 0-65535 dst-port 10000-10000 
+set service "VNC_10000" + tcp src-port 0-65535 dst-port 10100-10100 
+set service "Wins" protocol tcp src-port 0-65535 dst-port 1512-1512 
+set service "Wins" + udp src-port 0-65535 dst-port 1512-1512 
+set service "Microsoft_DS" protocol tcp src-port 0-65535 dst-port 137-137 
+set service "Microsoft_DS" + tcp src-port 0-65535 dst-port 138-138 
+set service "Microsoft_DS" + tcp src-port 0-65535 dst-port 139-139 
+set service "Public_Key" protocol tcp src-port 0-65535 dst-port 6818-6818 
+set service "Public_Key" + udp src-port 0-65535 dst-port 6818-6818 
+set service "ERP_PORT1" protocol tcp src-port 0-65535 dst-port 1001-1001 
+set service "ERP_PORT1" + udp src-port 0-65535 dst-port 1001-1001 
+set service "VNC_20000" protocol tcp src-port 0-65535 dst-port 20000-20000 
+set service "VNC_20000" + tcp src-port 0-65535 dst-port 20100-20100 
+set service "Telnet_S" protocol tcp src-port 0-65535 dst-port 22-22 
+set service "Telnet_S" + tcp src-port 0-65535 dst-port 23-23 
+set service "Mail Server[box-sol]" protocol tcp src-port 0-65535 dst-port 8386-8386 
+set service "Mail Server[box-sol]" + tcp src-port 0-65535 dst-port 22-22 
+set service "Mail Server[box-sol]" + tcp src-port 0-65535 dst-port 80-80 
+set service "Mail Server[box-sol]" + tcp src-port 0-65535 dst-port 25-25 
+set service "Mail Server[box-sol]" + tcp src-port 0-65535 dst-port 110-110 
+set service "Mail Server[box-sol]" + tcp src-port 0-65535 dst-port 23-23 
+set service "VNC_6400" protocol tcp src-port 0-65535 dst-port 6400-6400 
+set service "VNC_6400" + tcp src-port 0-65535 dst-port 6500-6500 
+set service "Video_Conf_8080" protocol tcp src-port 0-65535 dst-port 8080-8080 
+set service "Video_Conf_8080" + tcp src-port 0-65535 dst-port 8880-8885 
+set service "Video_Conf_8080" + udp src-port 0-65535 dst-port 8880-8885 
+set service "SpamSQR_TEST" protocol tcp src-port 0-65535 dst-port 80-80 
+set service "SpamSQR_TEST" + tcp src-port 0-65535 dst-port 123-123 
+set service "SpamSQR_TEST" + udp src-port 0-65535 dst-port 123-123 
+set service "SpamSQR_TEST" + tcp src-port 0-65535 dst-port 53-53 
+set service "Mail_8386" protocol tcp src-port 0-65535 dst-port 8386-8386 
+set service "Mail_8386" + udp src-port 0-65535 dst-port 8386-8386 
+set service "FTP_817" protocol tcp src-port 0-65535 dst-port 817-817 
+set service "FTP_817" + udp src-port 0-65535 dst-port 817-817 
+set service "orcad" protocol tcp src-port 0-65535 dst-port 5280-5280 
+set service "orcad" + udp src-port 0-65535 dst-port 5280-5280 
+set service "SEP8014" protocol tcp src-port 0-65535 dst-port 8014-8014 
+set service "SEP8014" + udp src-port 0-65535 dst-port 8014-8014 
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth default auth server "Local"
+set admin name "root"
+set admin password "nHUWLcrcCbiIcBsBts7MseKtpPI3Yn"
+set admin user "justin" password "nGUjObrcD9BEc3/His5OvuHt53GBHn" privilege "all"
+set admin user "admin" password "nF8hATrIFYqOc0SGWsKGqrNt7RB92n" privilege "all"
+set admin user "genesis" password "nEm7KBr9PIDCc7DMCsEOCKCtmhJxUn" privilege "all"
+set admin manager-ip 192.168.100.0 255.255.255.0
+set admin manager-ip 114.32.237.125 255.255.255.255
+set admin manager-ip 192.168.1.207 255.255.255.255
+set admin manager-ip 112.105.115.74 255.255.255.255
+set admin manager-ip 192.168.101.0 255.255.255.0
+set admin scs password disable username root
+set admin scs password disable username admin
+set admin scs password disable username genesis
+set admin mail alert
+set admin mail server-name "192.168.100.246"
+set admin mail mail-addr1 "jayson_wang@loop.com.tw"
+set admin auth timeout 100
+set admin auth server "Local"
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone id 100 "VOIP"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+set zone "DMZ" tcp-rst 
+set zone "VLAN" block 
+set zone "VLAN" tcp-rst 
+unset zone "VOIP" tcp-rst 
+set zone "Trust" screen icmp-flood
+set zone "Trust" screen udp-flood
+set zone "Trust" screen winnuke
+set zone "Trust" screen port-scan
+set zone "Trust" screen ip-sweep
+set zone "Trust" screen tear-drop
+set zone "Trust" screen syn-flood
+set zone "Trust" screen ip-spoofing
+set zone "Trust" screen ping-death
+set zone "Trust" screen ip-filter-src
+set zone "Trust" screen land
+set zone "Trust" screen syn-frag
+set zone "Trust" screen tcp-no-flag
+set zone "Trust" screen unknown-protocol
+set zone "Trust" screen ip-bad-option
+set zone "Trust" screen ip-record-route
+set zone "Trust" screen ip-timestamp-opt
+set zone "Trust" screen ip-security-opt
+set zone "Trust" screen ip-loose-src-route
+set zone "Trust" screen ip-strict-src-route
+set zone "Trust" screen ip-stream-opt
+set zone "Trust" screen icmp-fragment
+set zone "Trust" screen icmp-large
+set zone "Trust" screen syn-fin
+set zone "Trust" screen fin-no-ack
+set zone "Trust" screen limit-session source-ip-based
+set zone "Trust" screen syn-ack-ack-proxy
+set zone "Trust" screen block-frag
+set zone "Trust" screen limit-session destination-ip-based
+set zone "Untrust" screen icmp-flood
+set zone "Untrust" screen udp-flood
+set zone "Untrust" screen winnuke
+set zone "Untrust" screen port-scan
+set zone "Untrust" screen ip-sweep
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ip-spoofing
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "Untrust" screen syn-frag
+set zone "Untrust" screen tcp-no-flag
+set zone "Untrust" screen unknown-protocol
+set zone "Untrust" screen ip-bad-option
+set zone "Untrust" screen ip-record-route
+set zone "Untrust" screen ip-timestamp-opt
+set zone "Untrust" screen ip-security-opt
+set zone "Untrust" screen ip-loose-src-route
+set zone "Untrust" screen ip-strict-src-route
+set zone "Untrust" screen ip-stream-opt
+set zone "Untrust" screen icmp-fragment
+set zone "Untrust" screen icmp-large
+set zone "Untrust" screen syn-fin
+set zone "Untrust" screen fin-no-ack
+set zone "Untrust" screen limit-session source-ip-based
+set zone "Untrust" screen syn-ack-ack-proxy
+set zone "Untrust" screen block-frag
+set zone "Untrust" screen limit-session destination-ip-based
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set zone "DMZ" screen icmp-flood
+set zone "DMZ" screen udp-flood
+set zone "DMZ" screen winnuke
+set zone "DMZ" screen port-scan
+set zone "DMZ" screen ip-sweep
+set zone "DMZ" screen tear-drop
+set zone "DMZ" screen syn-flood
+set zone "DMZ" screen ip-spoofing
+set zone "DMZ" screen ping-death
+set zone "DMZ" screen ip-filter-src
+set zone "DMZ" screen land
+set zone "DMZ" screen syn-frag
+set zone "DMZ" screen tcp-no-flag
+set zone "DMZ" screen unknown-protocol
+set zone "DMZ" screen ip-bad-option
+set zone "DMZ" screen ip-record-route
+set zone "DMZ" screen ip-timestamp-opt
+set zone "DMZ" screen ip-security-opt
+set zone "DMZ" screen ip-loose-src-route
+set zone "DMZ" screen ip-strict-src-route
+set zone "DMZ" screen ip-stream-opt
+set zone "DMZ" screen icmp-fragment
+set zone "DMZ" screen icmp-large
+set zone "DMZ" screen syn-fin
+set zone "DMZ" screen fin-no-ack
+set zone "DMZ" screen limit-session source-ip-based
+set zone "DMZ" screen syn-ack-ack-proxy
+set zone "DMZ" screen block-frag
+set zone "DMZ" screen limit-session destination-ip-based
+set zone "Untrust" screen udp-flood threshold 1500
+set zone "Untrust" screen udp-flood dst-ip 192.168.0.39 threshold 2000
+set zone "Untrust" screen udp-flood dst-ip 192.168.0.57 threshold 2000
+set zone "Untrust" screen udp-flood dst-ip 192.168.0.58 threshold 2000
+set zone "Untrust" screen udp-flood dst-ip 192.168.0.59 threshold 2000
+set zone "Untrust" screen udp-flood dst-ip 192.168.0.200 threshold 2000
+set zone "Untrust" screen udp-flood dst-ip 192.168.0.81 threshold 2000
+set zone "Trust" screen limit-session source-ip-based 4096
+set zone "Untrust" screen limit-session source-ip-based 512
+set zone "DMZ" screen limit-session source-ip-based 512
+set zone "Trust" screen limit-session destination-ip-based 4096
+set zone "Untrust" screen limit-session destination-ip-based 1024
+set zone "DMZ" screen limit-session destination-ip-based 512
+set zone "Trust" screen syn-ack-ack threshold 1024
+set zone "Untrust" screen syn-ack-ack threshold 1024
+set interface "ethernet1" zone "Trust"
+set interface "ethernet2" zone "Untrust"
+set interface "ethernet3" zone "DMZ"
+set interface "tunnel.1" zone "Untrust"
+unset interface vlan1 ip
+set interface ethernet1 ip 192.168.101.244/24
+set interface ethernet1 route
+set interface ethernet2 ip 192.168.102.2/24
+set interface ethernet2 route
+set interface ethernet3 ip 172.16.1.254/24
+set interface ethernet3 route
+set interface tunnel.1 ip unnumbered interface ethernet2
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet1 ip manageable
+set interface ethernet2 ip manageable
+set interface ethernet3 ip manageable
+set interface ethernet2 manage ping
+set interface ethernet2 manage ssh
+set interface ethernet2 manage telnet
+set interface ethernet2 manage ssl
+set interface ethernet2 manage web
+set interface ethernet3 manage telnet
+set interface ethernet3 manage web
+set interface ethernet3 dhcp server service
+set interface ethernet3 dhcp server enable
+set interface ethernet3 dhcp server option lease 1440 
+set interface ethernet3 dhcp server option gateway 172.16.1.254 
+set interface ethernet3 dhcp server option netmask 255.255.255.0 
+set interface ethernet3 dhcp server option dns1 192.168.100.252 
+set interface ethernet3 dhcp server option dns2 192.168.100.253 
+set interface ethernet3 dhcp server option dns3 168.95.192.1 
+set interface ethernet3 dhcp server ip 172.16.1.181 to 172.16.1.200 
+set interface ethernet2 dip 4 192.168.102.3 192.168.102.3
+set interface ethernet2 dip 5 192.168.102.4 192.168.102.4
+set interface ethernet2 dip 6 192.168.102.31 192.168.102.31
+unset flow tcp-syn-check
+set console page 24
+set domain loop.com.tw
+set hostname ns25
+set dns host dns1 168.95.192.1
+set dns host dns2 168.95.1.1
+set address "Trust" "10.0.2.1/255.255.255.0" 10.0.2.1 255.255.255.0
+set address "Trust" "10.0.2.254/255.255.255.255" 10.0.2.254 255.255.255.255
+set address "Trust" "10.0.254.241/32" 10.0.254.241 255.255.255.255
+set address "Trust" "10.0.4.1/32" 10.0.4.1 255.255.255.255
+set address "Trust" "10.0.45.7/32" 10.0.45.7 255.255.255.255
+set address "Trust" "10.0.6.120/32" 10.0.6.120 255.255.255.255
+set address "Trust" "10.3.1.21" 10.3.1.21 255.255.255.255 "block mms"
+set address "Trust" "10.3.6.1/32" 10.3.6.1 255.255.255.255
+set address "Trust" "10.4.2.51" 10.4.2.51 255.255.255.255
+set address "Trust" "140.113.87.49/32" 140.113.87.49 255.255.255.255
+set address "Trust" "192.168.1.0/24" 192.168.1.0 255.255.255.0
+set address "Trust" "192.168.1.128/32" 192.168.1.128 255.255.255.255
+set address "Trust" "192.168.1.132" 192.168.1.132 255.255.255.255
+set address "Trust" "192.168.1.140/32" 192.168.1.140 255.255.255.255
+set address "Trust" "192.168.1.26/32" 192.168.1.26 255.255.255.255
+set address "Trust" "192.168.1.66/255.255.255.0" 192.168.1.66 255.255.255.0
+set address "Trust" "192.168.1.66/255.255.255.255" 192.168.1.66 255.255.255.255
+set address "Trust" "192.168.1.70/32" 192.168.1.70 255.255.255.255
+set address "Trust" "192.168.1.73" 192.168.1.73 255.255.255.255
+set address "Trust" "192.168.10.35/32" 192.168.10.35 255.255.255.255
+set address "Trust" "192.168.100.0/24" 192.168.100.0 255.255.255.0
+set address "Trust" "192.168.100.0/255.255.255.0" 192.168.100.0 255.255.255.0
+set address "Trust" "192.168.100.1.70" 192.168.100.1.70
+set address "Trust" "192.168.100.1/32" 192.168.100.1 255.255.255.255
+set address "Trust" "192.168.100.11/32" 192.168.100.11 255.255.255.255
+set address "Trust" "192.168.100.12/32" 192.168.100.12 255.255.255.255
+set address "Trust" "192.168.100.140/32" 192.168.100.140 255.255.255.255
+set address "Trust" "192.168.100.146" 192.168.100.146 255.255.255.255
+set address "Trust" "192.168.100.196" 192.168.100.196 255.255.255.255 "CQWEB"
+set address "Trust" "192.168.100.200" 192.168.100.200 255.255.255.255
+set address "Trust" "192.168.100.205" 192.168.100.205 255.255.255.255 "looprfs"
+set address "Trust" "192.168.100.206" 192.168.100.206 255.255.255.255 "loopcq"
+set address "Trust" "192.168.100.31/32" 192.168.100.31 255.255.255.255
+set address "Trust" "192.168.100.36/255.255.255.255" 192.168.100.36 255.255.255.255
+set address "Trust" "192.168.100.37/32" 192.168.100.37 255.255.255.255
+set address "Trust" "192.168.100.4/255.255.255.255" 192.168.100.4 255.255.255.255
+set address "Trust" "192.168.100.51/255.255.255.255" 192.168.100.51 255.255.255.255
+set address "Trust" "192.168.100.71/255.255.255.255" 192.168.100.71 255.255.255.255
+set address "Trust" "192.168.100.72/255.255.255.255" 192.168.100.72 255.255.255.255
+set address "Trust" "192.168.100.86/32" 192.168.100.86 255.255.255.255
+set address "Trust" "192.168.100.87" 192.168.100.87 255.255.255.255 "Jayson's PC"
+set address "Trust" "192.168.100.91/32" 192.168.100.91 255.255.255.255
+set address "Trust" "192.168.100.92" 192.168.100.92 255.255.255.255 "192.168.100.92"
+set address "Trust" "192.168.100.92/32" 192.168.100.92 255.255.255.255
+set address "Trust" "192.168.100.97/255.255.255.255" 192.168.100.97 255.255.255.255
+set address "Trust" "192.168.100.99/32" 192.168.100.99 255.255.255.255
+set address "Trust" "192.168.101.99/32" 192.168.101.99 255.255.255.255
+set address "Trust" "192.168.12.1" 192.168.12.1 255.255.255.255 "余光隆"
+set address "Trust" "192.168.13.53" 192.168.13.53 255.255.255.255
+set address "Trust" "192.168.13.54" 192.168.13.54 255.255.255.255
+set address "Trust" "192.168.17.51" 192.168.17.51 255.255.255.255 "for SIP test"
+set address "Trust" "192.168.17.52" 192.168.17.52 255.255.255.255 "for SIP"
+set address "Trust" "192.168.17.53" 192.168.17.53 255.255.255.255 "for SIP"
+set address "Trust" "192.168.17.54" 192.168.17.54 255.255.255.255 "for SIP"
+set address "Trust" "192.168.3.0/24" 192.168.3.0 255.255.255.0
+set address "Trust" "192.168.40.55/32" 192.168.40.55 255.255.255.255
+set address "Trust" "211.23.53.218/32" 211.23.53.218 255.255.255.255
+set address "Trust" "218.248.240.21/32" 218.248.240.21 255.255.255.255
+set address "Trust" "222.218.45.101/255.255.255.255" 222.218.45.101 255.255.255.255
+set address "Trust" "61.139.219.203/255.255.255.255" 61.139.219.203 255.255.255.255
+set address "Trust" "7F Web Cam" 192.168.1.179 255.255.255.255 "7F Web Cam"
+set address "Trust" "Aaron NB" 192.168.1.207 255.255.255.255 "Aaron'c NB"
+set address "Trust" "alex device" 192.168.57.50 255.255.255.255 "LAB Alex"
+set address "Trust" "Coverity Connect server" 192.168.100.150 255.255.255.255 "Coverity Connect server"
+set address "Trust" "Dennis Punjabi" 10.98.2.10 255.255.255.255 "for Dennis Punjabi"
+set address "Trust" "Dennis Punjabi VM" 10.98.2.20 255.255.255.255 "for Dennis Punjabi VM"
+set address "Trust" "IP_10.0.3.10" 10.0.3.10 255.255.255.255
+set address "Trust" "IP_10.0.5.63" 10.0.5.63 255.255.255.255
+set address "Trust" "IP_10.0.8.2" 10.0.8.2 255.255.255.255 "橋飛"
+set address "Trust" "IP_10.133.1.30" 10.133.1.30 255.255.255.255 "for PLM Shen CCTV"
+set address "Trust" "IP_10.133.1.31" 10.133.1.31 255.255.255.255 "for PLM Shen CCTV"
+set address "Trust" "IP_10.133.1.32" 10.133.1.32 255.255.255.255 "for PLM Shen CCTV"
+set address "Trust" "IP_10.3.17.6" 10.3.17.6 255.255.255.255 "Loop cn"
+set address "Trust" "IP_10.40.100.40" 10.40.100.40 255.255.255.255 "IP_10.40.100.40"
+set address "Trust" "IP_10.9.5.3" 10.9.5.3 255.255.255.255 "for iNMS OPENSSL test"
+set address "Trust" "IP_192.168.1.161" 192.168.1.161 255.255.255.255
+set address "Trust" "IP_192.168.1.162" 192.168.1.162 255.255.255.255
+set address "Trust" "IP_192.168.1.165" 192.168.1.165 255.255.255.255
+set address "Trust" "IP_192.168.1.201" 192.168.1.201 255.255.255.255
+set address "Trust" "IP_192.168.1.207" 192.168.1.207 255.255.255.255 "Peter"
+set address "Trust" "IP_192.168.1.21" 192.168.1.21 255.255.255.255
+set address "Trust" "IP_192.168.1.25" 192.168.1.25 255.255.255.255
+set address "Trust" "IP_192.168.1.41" 192.168.1.41 255.255.255.255
+set address "Trust" "IP_192.168.1.62" 192.168.1.62 255.255.255.255
+set address "Trust" "IP_192.168.1.63" 192.168.1.63 255.255.255.255
+set address "Trust" "IP_192.168.100.1" 192.168.100.1 255.255.255.255
+set address "Trust" "IP_192.168.100.100" 192.168.100.100 255.255.255.255 "MIS test 192.168.100.100"
+set address "Trust" "IP_192.168.100.11" 192.168.100.11 255.255.255.255 "Proxy_2"
+set address "Trust" "IP_192.168.100.12" 192.168.100.12 255.255.255.255
+set address "Trust" "IP_192.168.100.13" 192.168.100.13 255.255.255.255
+set address "Trust" "IP_192.168.100.131" 192.168.100.131 255.255.255.255 "Sawmill log server"
+set address "Trust" "IP_192.168.100.132" 192.168.100.132 255.255.255.255 "DNS 4 for Internal"
+set address "Trust" "IP_192.168.100.164" 192.168.100.164 255.255.255.255
+set address "Trust" "IP_192.168.100.2" 192.168.100.2 255.255.255.255
+set address "Trust" "IP_192.168.100.209" 192.168.100.209 255.255.255.255
+set address "Trust" "IP_192.168.100.210" 192.168.100.210 255.255.255.255
+set address "Trust" "IP_192.168.100.222" 192.168.100.222 255.255.255.255
+set address "Trust" "IP_192.168.100.242" 192.168.100.242 255.255.255.255 "HR Server"
+set address "Trust" "IP_192.168.100.245" 192.168.100.245 255.255.255.255
+set address "Trust" "IP_192.168.100.246" 192.168.100.246 255.255.255.255
+set address "Trust" "IP_192.168.100.247" 192.168.100.247 255.255.255.255
+set address "Trust" "IP_192.168.100.248" 192.168.100.248 255.255.255.255
+set address "Trust" "IP_192.168.100.250" 192.168.100.250 255.255.255.255 "IP_192.168.100.250"
+set address "Trust" "IP_192.168.100.252" 192.168.100.252 255.255.255.255
+set address "Trust" "IP_192.168.100.253" 192.168.100.253 255.255.255.255
+set address "Trust" "IP_192.168.100.3" 192.168.100.3 255.255.255.255
+set address "Trust" "IP_192.168.100.4" 192.168.100.4 255.255.255.255 "Voip"
+set address "Trust" "IP_192.168.100.5" 192.168.100.5 255.255.255.255
+set address "Trust" "IP_192.168.100.6" 192.168.100.6 255.255.255.255
+set address "Trust" "IP_192.168.100.62" 192.168.100.62 255.255.255.255
+set address "Trust" "IP_192.168.100.75" 192.168.100.75 255.255.255.255
+set address "Trust" "IP_192.168.100.82" 192.168.100.82 255.255.255.255
+set address "Trust" "IP_192.168.100.83" 192.168.100.83 255.255.255.255 "Roger"
+set address "Trust" "IP_192.168.100.84" 192.168.100.84 255.255.255.255
+set address "Trust" "IP_192.168.100.85" 192.168.100.85 255.255.255.255
+set address "Trust" "IP_192.168.100.86" 192.168.100.86 255.255.255.255
+set address "Trust" "IP_192.168.100.87" 192.168.100.87 255.255.255.255
+set address "Trust" "IP_192.168.100.89" 192.168.100.89 255.255.255.255
+set address "Trust" "IP_192.168.100.91" 192.168.100.91 255.255.255.255
+set address "Trust" "IP_192.168.100.92" 192.16.100.92 255.255.255.255
+set address "Trust" "IP_192.168.100.93" 192.168.100.93 255.255.255.255
+set address "Trust" "IP_192.168.100.95" 192.168.100.95 255.255.255.255
+set address "Trust" "IP_192.168.100.97" 192.168.100.97 255.255.255.255
+set address "Trust" "IP_192.168.100.98" 192.168.100.98 255.255.255.255
+set address "Trust" "IP_192.168.100.99" 192.168.100.99 255.255.255.255 "Aknoix Server"
+set address "Trust" "IP_192.168.101.244" 192.168.101.244 255.255.255.255
+set address "Trust" "IP_192.168.11.37" 192.168.11.37 255.255.255.255
+set address "Trust" "IP_210.243.203.121" 210.243.203.121 255.255.255.255
+set address "Trust" "lab web cam1" 192.168.17.61 255.255.255.255 "lab web cam1"
+set address "Trust" "lab web cam2" 192.168.17.62 255.255.255.255 "lab web cam2"
+set address "Trust" "LAN-10.91.0.0" 10.91.0.0 255.255.0.0 "LAN-10.91.0.0"
+set address "Trust" "LAN-10.92.0.0" 10.92.0.0 255.255.0.0 "LAN-10.92.0.0"
+set address "Trust" "LAN-10.93.0.0" 10.93.0.0 255.255.0.0 "LAN-10.93.0.0"
+set address "Trust" "LAN-10.94.0.0" 10.94.0.0 255.255.0.0 "LAN-10.94.0.0"
+set address "Trust" "LAN-10.95.0.0" 10.95.0.0 255.255.0.0 "LAN-10.95.0.0"
+set address "Trust" "LAN-10.96.0.0" 10.96.0.0 255.255.0.0 "LAN-10.96.0.0"
+set address "Trust" "LAN-10.97.0.0" 10.97.0.0 255.255.0.0 "LAN-10.97.0.0"
+set address "Trust" "LAN-10.98.0.0" 10.98.0.0 255.255.0.0 "LAN-10.98.0.0"
+set address "Trust" "LAN-10.99.0.0" 10.99.0.0 255.255.0.0 "LAN-10.99.0.0"
+set address "Trust" "LAN-192.168.10.0" 192.168.10.0 255.255.255.0
+set address "Trust" "LAN-192.168.11.0" 192.168.11.0 255.255.255.0
+set address "Trust" "LAN-192.168.12.0" 192.168.12.0 255.255.255.0
+set address "Trust" "LAN-192.168.13.0" 192.168.13.0 255.255.255.0
+set address "Trust" "LAN-192.168.14.0" 192.168.14.0 255.255.255.0
+set address "Trust" "LAN-192.168.15.0" 192.168.15.0 255.255.255.0
+set address "Trust" "LAN-192.168.16.0" 192.168.16.0 255.255.255.0
+set address "Trust" "LAN-192.168.17.0" 192.168.17.0 255.255.255.0
+set address "Trust" "LAN-192.168.55.0" 192.168.55.0 255.255.255.0 "192.168.55.0"
+set address "Trust" "LAN-192.168.56.0" 192.168.56.0 255.255.255.0 "192.168.56.0"
+set address "Trust" "LAN-192.168.57.0" 192.168.57.0 255.255.255.0 "192.168.57.0"
+set address "Trust" "LAN-192.168.58.0" 192.168.58.0 255.255.255.0 "192.168.58.0"
+set address "Trust" "LinuxDns" 192.168.100.61 255.255.255.255
+set address "Trust" "Local_LAN_192.168.100.0/24" 192.168.100.0 255.255.255.0
+set address "Trust" "loopftp" 192.168.100.130 255.255.255.255
+set address "Trust" "loopts01" 192.168.100.133 255.255.255.255 "Loop terminal server"
+set address "Trust" "Net_10.0" 10.0.0.0 255.255.0.0
+set address "Trust" "Net_10.1" 10.1.0.0 255.255.0.0
+set address "Trust" "Net_10.131" 10.131.0.0 255.255.0.0 "10.131"
+set address "Trust" "Net_10.132" 10.132.0.0 255.255.0.0
+set address "Trust" "Net_10.2" 10.2.0.0 255.255.0.0
+set address "Trust" "Net_10.3" 10.3.0.0 255.255.0.0
+set address "Trust" "Net_10.4" 10.4.0.0 255.255.0.0
+set address "Trust" "Net_10.40" 10.40.0.0 255.255.0.0
+set address "Trust" "Net_10.41" 10.41.0.0 255.255.0.0
+set address "Trust" "Net_10.9" 10.9.0.0 255.255.0.0
+set address "Trust" "Net_10.93" 10.93.0.0 255.255.0.0 "Net_10.93"
+set address "Trust" "Net_172.16.1.0" 172.16.1.0 255.255.255.0
+set address "Trust" "Net_172.16.40" 172.16.40.0 255.255.255.0
+set address "Trust" "Net_172.16.41" 172.16.41.0 255.255.255.0
+set address "Trust" "Net_192.168.1" 192.168.1.0 255.255.255.0
+set address "Trust" "Net_192.168.100" 192.168.100.0 255.255.255.0
+set address "Trust" "Net_192.168.101" 192.168.101.0 255.255.255.0
+set address "Trust" "Net_192.168.120" 192.168.120.0 255.255.255.0
+set address "Trust" "Net_192.168.121" 192.168.121.0 255.255.255.0
+set address "Trust" "Net_192.168.2" 192.168.2.0 255.255.255.0
+set address "Trust" "Net_192.168.3" 192.168.3.0 255.255.255.0
+set address "Trust" "Net_192.168.40" 192.168.40.0 255.255.255.0
+set address "Trust" "Peter iNMS test server" 10.9.168.168 255.255.255.255 "Peter iNMS test server"
+set address "Trust" "peter VNC PC" 10.9.2.1 255.255.255.255 "peter VNC to chuchin"
+set address "Trust" "taiwan-lan" 192.168.100.0 255.255.255.0
+set address "Trust" "unix" 192.168.100.248 255.255.255.255
+set address "Trust" "WSA" 192.168.3.1 255.255.255.255 "WSA"
+set address "Untrust" "0.0.0.0/0" 0.0.0.0 0.0.0.0
+set address "Untrust" "100.42.218.80" 100.42.218.80 255.255.255.255 "haker"
+set address "Untrust" "106.187.92.95" 106.187.92.95 255.255.255.255 "attack ip"
+set address "Untrust" "110.188.0.16" 110.188.0.16 255.255.255.255
+set address "Untrust" "111.111.111.111" 111.111.111.111 255.255.255.255 "malware"
+set address "Untrust" "111.251.160.129" 111.251.160.129 255.255.255.255 "attack ip"
+set address "Untrust" "111.251.180.40" 111.251.180.40 255.255.255.255 "mail attack ip"
+set address "Untrust" "113.10.221.93" 113.10.221.93 255.255.255.255 "attack ip"
+set address "Untrust" "114.32.237.125/32" 114.32.237.125 255.255.255.255 "Genesis Engineer Use"
+set address "Untrust" "114.35.84.201" 114.35.84.201 255.255.255.255 "overall"
+set address "Untrust" "114.80.67.20" 114.80.67.20 255.255.255.255 "hacker "
+set address "Untrust" "114.80.67.89" 114.80.67.89 255.255.255.255 "hacker "
+set address "Untrust" "114.80.67.90" 114.80.67.90 255.255.255.255 "hacker "
+set address "Untrust" "117.27.85.135/255.255.255.255" 117.27.85.135 255.255.255.255
+set address "Untrust" "118.231.207.230" 118.231.207.230 255.255.255.255 "pop3 attack"
+set address "Untrust" "119.75.212.200" 119.75.212.200 255.255.255.255
+set address "Untrust" "122.226.102.0" 122.226.102.0 255.255.255.0
+set address "Untrust" "122.226.102.230" 122.226.102.230 255.255.255.255 "attack mail server"
+set address "Untrust" "122.226.102.61" 122.226.102.61 255.255.255.255 "attack mail server 20140303"
+set address "Untrust" "122.226.102.62" 122.226.102.62 255.255.255.255
+set address "Untrust" "126.224.229.245" 126.224.229.245 255.255.255.255 "126.224.229.245"
+set address "Untrust" "140.112.108.178/255.255.255.255" 140.112.108.178 255.255.255.255
+set address "Untrust" "140.112.19.195/32" 140.112.19.195 255.255.255.255
+set address "Untrust" "140.132.1.138" 140.132.1.138 255.255.255.255
+set address "Untrust" "142.0.79.99" 142.0.79.99 255.255.255.255 "mail pop3 attack"
+set address "Untrust" "150.140.187.87" 150.140.187.87 255.255.255.255 "150.140.187.87"
+set address "Untrust" "164.138.61.59/255.255.255.255" 164.138.61.59 255.255.255.255
+set address "Untrust" "169.254.134.154/255.255.255.255" 169.254.134.154 255.255.255.255
+set address "Untrust" "175.181.36.47/32" 175.181.36.47 255.255.255.255
+set address "Untrust" "176.61.138.19" 176.61.138.19 255.255.255.255 "attack mail server "
+set address "Untrust" "182.147.243.129" 182.147.243.129 255.255.255.255 "attack mail ip"
+set address "Untrust" "182.147.243.130" 182.147.243.130 255.255.255.255 "182.147.243.130"
+set address "Untrust" "182.147.243.27" 182.147.243.27 255.255.255.255 "attack ip"
+set address "Untrust" "183.13.208.240" 183.13.208.240 255.255.255.255 "attack ip"
+set address "Untrust" "183.136.215.26" 183.136.215.26 255.255.255.255 "attack ip"
+set address "Untrust" "183.136.215.40" 183.136.215.40 255.255.255.255
+set address "Untrust" "189.119.29.145" 189.119.29.145 255.255.255.255 "189.119.29.145"
+set address "Untrust" "192.168.100.0/255.255.255.0" 192.168.100.0 255.255.255.0
+set address "Untrust" "192.168.102.1/255.255.255.255" 192.168.102.1 255.255.255.255
+set address "Untrust" "192.168.102.1/32" 192.168.102.1 255.255.255.255
+set address "Untrust" "193.204.79.48" 193.204.79.48 255.255.255.255 "193.204.79.48"
+set address "Untrust" "194.102.90.40/255.255.255.255" 194.102.90.40 255.255.255.255
+set address "Untrust" "200.203.126.103" 200.203.126.103 255.255.255.255 "200.203.126.103"
+set address "Untrust" "200.55.198.251" 200.55.198.251 255.255.255.255 "200.55.198.251"
+set address "Untrust" "201.62.213.118" 201.62.213.118 255.255.255.255 "201.62.213.118"
+set address "Untrust" "203.131.222.102" 203.131.222.102 255.255.255.255 "backdoor malware"
+set address "Untrust" "203.174.36.146" 203.174.36.146 255.255.255.255 "203.174.36.146"
+set address "Untrust" "203.74.167.1" 203.74.167.1 255.255.255.255 "ICMP attack ip"
+set address "Untrust" "208.105.226.235" 208.105.226.235 255.255.255.255 "attack"
+set address "Untrust" "209.85.201.189/32" 209.85.201.189 255.255.255.255
+set address "Untrust" "210.202.44.193" 210.202.44.193 255.255.255.255 "ICMP attack ip"
+set address "Untrust" "210.64.59.131" 210.64.59.131 255.255.255.255 "210.64.59.131"
+set address "Untrust" "211.138.238.198" 211.138.238.198 255.255.255.255 "211.138.238.198"
+set address "Untrust" "211.23.55.66/32" 211.23.55.66 255.255.255.255
+set address "Untrust" "211.23.55.73" 211.23.55.73 255.255.255.255 "LAB IP"
+set address "Untrust" "211.75.225.184" 211.75.225.184 255.255.255.255 "211.75.225.184"
+set address "Untrust" "213.171.220.245" 213.171.220.245 255.255.255.255 "black list for attack"
+set address "Untrust" "216.250.24.64" 216.250.24.64 255.255.255.255 "216.250.24.64"
+set address "Untrust" "217.149.5.169" 217.149.5.169 255.255.255.255 "217.149.5.169"
+set address "Untrust" "218.248.240.178" 218.248.240.178 255.255.255.255 "ICMP attack IP"
+set address "Untrust" "218.248.240.18" 218.248.240.18 255.255.255.255 "ICMP attack ip"
+set address "Untrust" "218.248.240.209" 218.248.240.209 255.255.255.255 "ICMP attack ip"
+set address "Untrust" "218.248.240.21/32" 218.248.240.21 255.255.255.255 "ICMP attack ip"
+set address "Untrust" "218.32.0.0/24" 218.32.0.0 255.255.255.0
+set address "Untrust" "218.6.65.5/255.255.255.255" 218.6.65.5 255.255.255.255
+set address "Untrust" "218.93.205.133" 218.93.205.133 255.255.255.255
+set address "Untrust" "218.93.205.163" 218.93.205.163 255.255.255.255
+set address "Untrust" "220.133.86.124/32" 220.133.86.124 255.255.255.255
+set address "Untrust" "222.186.34.69" 222.186.34.69 255.255.255.255 "222.186.34.69"
+set address "Untrust" "222.218.45.101/255.255.255.255" 222.218.45.101 255.255.255.255
+set address "Untrust" "222.73.254.52/32" 222.73.254.52 255.255.255.255
+set address "Untrust" "222.76.211.7" 222.76.211.7 255.255.255.255
+set address "Untrust" "222.76.211.8" 222.76.211.8 255.255.255.255
+set address "Untrust" "42.68.12.57" 42.68.12.57 255.255.255.255 "attack ip"
+set address "Untrust" "58.181.132.243/32" 58.181.132.243 255.255.255.255
+set address "Untrust" "58.221.59.172" 58.221.59.172 255.255.255.255 "attack ip"
+set address "Untrust" "58.49.233.177/255.255.255.255" 58.49.233.177 255.255.255.255
+set address "Untrust" "59.120.10.129" 59.120.10.129 255.255.255.255 "TPE ip sharing"
+set address "Untrust" "59.120.200.226" 59.120.200.226 255.255.255.255 "ICMP attack ip"
+set address "Untrust" "59.124.57.149/255.255.255.255" 59.124.57.149 255.255.255.255
+set address "Untrust" "59.161.101.173" 59.161.101.173 255.255.255.255 "余光隆 request"
+set address "Untrust" "60.250.52.28/255.255.255.255" 60.250.52.28 255.255.255.255
+set address "Untrust" "61.139.126.206" 61.139.126.206 255.255.255.255
+set address "Untrust" "61.139.219.203/255.255.255.255" 61.139.219.203 255.255.255.255
+set address "Untrust" "61.218.21.149/255.255.255.255" 61.218.21.149 255.255.255.255
+set address "Untrust" "61.218.32.198/255.255.255.255" 61.218.32.198 255.255.255.255
+set address "Untrust" "61.219.36.120" 61.219.36.120 255.255.255.255
+set address "Untrust" "61.219.36.250" 61.219.36.250 255.255.255.255 "facebook"
+set address "Untrust" "61.237.159.25" 61.237.159.25 255.255.255.255 "61.237.159.25"
+set address "Untrust" "61.62.126.0" 59.126.117.155 255.255.255.0 "overall"
+set address "Untrust" "65.49.92.107" 65.49.92.107 255.255.255.255 "65.49.92.107"
+set address "Untrust" "65.49.92.184" 65.49.92.184 255.255.255.255 "65.49.92.184"
+set address "Untrust" "65.49.92.227" 65.49.92.227 255.255.255.255 "65.49.92.227"
+set address "Untrust" "65.49.92.251" 65.49.92.251 255.255.255.255 "65.49.92.251"
+set address "Untrust" "66.220.146.15" 66.220.146.15 255.255.255.255
+set address "Untrust" "69.63.76.147" 69.63.76.147 255.255.255.255
+set address "Untrust" "69.63.76.149" 69.63.76.149 255.255.255.255
+set address "Untrust" "69.67.47.182" 69.67.47.182 255.255.255.255 "20120315"
+set address "Untrust" "71.100.138.24" 71.100.138.24 255.255.255.255 "attack ip"
+set address "Untrust" "72.11.141.18" 72.11.141.18 255.255.255.255 "tv movie"
+set address "Untrust" "74.3.209.153/32" 74.3.209.153 255.255.255.255
+set address "Untrust" "74.50.95.6" 74.50.95.6 255.255.255.255 "74.50.95.6"
+set address "Untrust" "81.6.5.180" 81.6.5.180 255.255.255.255 "deny attack to mail server"
+set address "Untrust" "91.215.158.79" 91.215.158.79 255.255.255.255
+set address "Untrust" "91.215.158.80" 91.215.158.80 255.255.255.255
+set address "Untrust" "94.242.150.189" 94.242.150.189 255.255.255.255 "94.242.150.189"
+set address "Untrust" "alex vendor" 203.196.171.36 255.255.255.255 "LAB ALex"
+set address "Untrust" "Arrive" 118.69.224.172 255.255.255.255
+set address "Untrust" "black list" 114.41.50.99 255.255.255.255 "jason chung"
+set address "Untrust" "Box-sol01" 114.34.3.211 255.255.255.255 "box-sol01"
+set address "Untrust" "Box-sol02" 211.22.107.61 255.255.255.255 "box-sol02"
+set address "Untrust" "Chunchin VNC Server" 124.162.57.213 255.255.255.255 "Chunchin VNC Server"
+set address "Untrust" "eslabpbx.zapto.org" 82.98.86.170 255.255.255.255 "iNMS SIP server"
+set address "Untrust" "external attack ip" 114.29.194.39 255.255.255.255 "external attack ip"
+set address "Untrust" "facebook1" 66.20.144.0 255.255.240.0
+set address "Untrust" "facebook2" 69.63.176.0 255.255.240.0
+set address "Untrust" "facebook3" 69.171.224.0 255.255.240.0
+set address "Untrust" "facebook4" 204.15.20.0 255.255.252.0
+set address "Untrust" "for hsiao" 61.62.126.147 255.255.255.255
+set address "Untrust" "ftp try" 14.198.2.127 255.255.255.255 "attack"
+set address "Untrust" "hacker attack" 211.75.225.184 255.255.255.255 "hacker attack "
+set address "Untrust" "HRMS" 60.250.204.61 255.255.255.255 "鉅邦資訊 IP"
+set address "Untrust" "IP_114.29.194.39" 114.29.194.39 255.255.255.255 "114.29.194.39"
+set address "Untrust" "IP_124.162.57.210" 124.162.57.210 255.255.255.255 "chunching IP"
+set address "Untrust" "IP_124.162.57.211" 124.162.57.211 255.255.255.255 "CQ mail ip"
+set address "Untrust" "IP_128.173.186.217" 128.173.186.217 255.255.255.255 "Black_LIST_Virus"
+set address "Untrust" "IP_152.163.208.57" 152.163.208.57 255.255.255.255 "AOL"
+set address "Untrust" "IP_170.224.10.179" 170.224.10.179 255.255.255.255 "AOL"
+set address "Untrust" "IP_205.188.179.134" 205.188.179.134 255.255.255.255 "AOL"
+set address "Untrust" "IP_209.225.0.6" 209.225.0.6 255.255.255.255 "AOL"
+set address "Untrust" "IP_210.69.240.204" 210.69.240.204 255.255.255.255
+set address "Untrust" "IP_210.71.179.107" 210.71.179.107 255.255.255.255
+set address "Untrust" "IP_211.21.10.170" 211.21.10.170 255.255.255.255
+set address "Untrust" "IP_211.22.143.138" 211.22.143.138 255.255.255.255
+set address "Untrust" "IP_211.22.143.139" 211.22.143.139 255.255.255.255
+set address "Untrust" "IP_211.23.52.34" 211.23.52.34 255.255.255.255
+set address "Untrust" "IP_211.23.52.41" 211.23.52.41 255.255.255.255
+set address "Untrust" "IP_211.23.52.60" 211.23.52.60 255.255.255.255
+set address "Untrust" "IP_211.23.53.210" 211.23.53.210 255.255.255.255
+set address "Untrust" "IP_211.23.54.91" 211.23.54.91 255.255.255.255
+set address "Untrust" "IP_211.23.55.72" 211.23.55.72 255.255.255.255
+set address "Untrust" "IP_211.23.55.78" 211.23.55.78 255.255.255.255
+set address "Untrust" "IP_211.72.233.21" 211.72.233.21 255.255.255.255
+set address "Untrust" "IP_211.78.178.234" 211.78.178.234 255.255.255.255
+set address "Untrust" "IP_218.107.251.35" 218.107.251.35 255.255.255.255
+set address "Untrust" "IP_218.107.251.36" 218.107.251.36 255.255.255.255
+set address "Untrust" "IP_218.107.251.38" 218.107.251.38 255.255.255.255
+set address "Untrust" "IP_218.168.208.177" 218.168.208.177 255.255.255.255
+set address "Untrust" "IP_219.84.82.57" 219.84.82.57 255.255.255.255 "碩琦_For IM02"
+set address "Untrust" "IP_220.130.128.111" 220.130.128.111 255.255.255.255 "碩琦_For IM01"
+set address "Untrust" "IP_220.133.205.212" 220.133.205.212 255.255.255.255 "Jayson Home"
+set address "Untrust" "IP_220.135.148.16" 220.135.148.16 255.255.255.255
+set address "Untrust" "IP_221.122.41.188" 221.122.41.188 255.255.255.255 "Black_LIST_Virus"
+set address "Untrust" "IP_222.73.254.52" 222.73.254.52 255.255.255.255 "Black_LIST_Virus"
+set address "Untrust" "IP_59.120.10.129" 59.120.10.129 255.255.255.255 "Loop_Taipei Ip sharing"
+set address "Untrust" "IP_59.126.52.202" 59.126.52.202 255.255.255.255 "蕭老師MCBA維護IP"
+set address "Untrust" "IP_60.248.71.162" 60.248.71.162 255.255.255.255
+set address "Untrust" "IP_60.250.133.26" 60.250.133.26 255.255.255.255 "Tony_Lin [For Akonix]"
+set address "Untrust" "IP_61.218.61.210" 61.218.61.210 255.255.255.255
+set address "Untrust" "IP_61.220.107.114" 61.220.107.114 255.255.255.255 "中華數位"
+set address "Untrust" "IP_61.220.211.138" 61.220.211.138 255.255.255.255 "碩琦"
+set address "Untrust" "IP_61.30.150.49" 61.30.150.49 255.255.255.255
+set address "Untrust" "IP_61.30.64.27" 61.30.64.27 255.255.255.255
+set address "Untrust" "IP_61.56.230.50" 61.56.230.50 255.255.255.255
+set address "Untrust" "IP_61.59.73.185" 61.59.73.185 255.255.255.255
+set address "Untrust" "IP_61.62.94.107" 61.62.94.107 255.255.255.255
+set address "Untrust" "IP_64.12.185.119" 64.12.185.119 255.255.255.255 "AOL"
+set address "Untrust" "IP_64.12.50.153" 64.12.50.153 255.255.255.255 "AOL"
+set address "Untrust" "IP_64.70.52.10" 64.70.52.10 255.255.255.255 "AOL"
+set address "Untrust" "jayson home" 175.180.213.0 255.255.255.0
+set address "Untrust" "LAB ADSL" 211.23.55.73 255.255.255.255
+set address "Untrust" "LAB test machine" 211.23.55.65 255.255.255.240 "LAB ADSL outside IP"
+set address "Untrust" "mail.primatelindia.com" mail.primatelindia.com
+set address "Untrust" "MSN_Login1" login.msn.com.tw
+set address "Untrust" "MSN_Login2" login.msn.com
+set address "Untrust" "NCTU library Server" 140.113.39.164 255.255.255.255 "for Spring_liao"
+set address "Untrust" "Net_192.168.121.0" 192.168.121.0 255.255.255.0
+set address "Untrust" "Net_192.168.40.0" 192.168.40.0 255.255.255.0
+set address "Untrust" "Net_205.188.135.0" 205.188.135.0 255.255.255.0 "AOL"
+set address "Untrust" "Net_205.188.8.0" 205.188.8.0 255.255.255.0 "AOL"
+set address "Untrust" "Net_220.130.117.0" 220.130.117.0 255.255.255.0 "AOL"
+set address "Untrust" "Net_64.12.151.0" 64.12.151.0 255.255.255.0 "AOL"
+set address "Untrust" "Net_64.12.161.0" 64.12.161.0 255.255.255.0 "AOL"
+set address "Untrust" "OpenFind" 210.59.162.124 255.255.255.255
+set address "Untrust" "overall_ip" 122.117.100.62 255.255.255.255 "overall"
+set address "Untrust" "OverAll_IP001" 59.126.55.234 255.255.255.255
+set address "Untrust" "pop3 attack 1" 184.154.179.23 255.255.255.255
+set address "Untrust" "pop3 attack 2" 211.115.80.175 255.255.255.255
+set address "Untrust" "pop3 attack 3" 212.52.159.74 255.255.255.255
+set address "Untrust" "pop3 attack 4" 64.233.145.227 255.255.255.255
+set address "Untrust" "pop3 attack 5" 64.233.145.227 255.255.255.255
+set address "Untrust" "Primatelindia01" 208.65.144.2 255.255.255.255 "印度工程師公司Mail Server01"
+set address "Untrust" "Primatelindia02" 208.65.144.3 255.255.255.255 "印度工程師公司Mail Server02"
+set address "Untrust" "Primatelindia03" 69.20.9.146 255.255.255.255 "印度工程師公司Mail Server03"
+set address "Untrust" "Remote_Lan_192.168.0.0/24" 192.168.0.0 255.255.255.0 "重慶VPN"
+set address "Untrust" "TMS sam" 59.120.37.117 255.255.255.255
+set address "Untrust" "tw116" www.tw116.com "tv movie"
+set address "Untrust" "WIM_ebuddy01" www.ebuddy.com
+set address "Untrust" "WIM_ebuddy02" www.e-messenger.net
+set address "Untrust" "WIM_ebuddy03" start.e-messenger.net
+set address "Untrust" "WIM_ebuddy04" 193.238.160.77 255.255.255.255
+set address "Untrust" "WIM_GOOWY01" www.goowy.com
+set address "Untrust" "WIM_GOOWY02" www.goowy.us
+set address "Untrust" "WIM_GOOWY03" www.goowy.info
+set address "Untrust" "WIM_GOOWY04" www.goowy.biz
+set address "Untrust" "WIM_iloveim01" www.iloveim.com
+set address "Untrust" "WIM_iloveim02" msnger.com
+set address "Untrust" "WIM_iloveim03" www.msnger.com
+set address "Untrust" "WIM_imhaha01" www.imhaha.com
+set address "Untrust" "WIM_imhaha02" www.imhaha.net
+set address "Untrust" "WIM_imunitive01" www.imunitive.com
+set address "Untrust" "WIM_imunitive02" www.imunitive.co.uk
+set address "Untrust" "WIM_mabber01" www.mabber.com
+set address "Untrust" "WIM_mabber02" www.mabber.us
+set address "Untrust" "WIM_MEEBO01" www28.meebo.com
+set address "Untrust" "WIM_MEEBO02" meebo.com
+set address "Untrust" "WIM_MEEBO03" www33.meebo.com
+set address "Untrust" "WIM_MEEBO04" www34.meebo.com
+set address "Untrust" "WIM_MEEBO05" www.meebo.us
+set address "Untrust" "WIM_MEEBO06" www.meebo.biz
+set address "Untrust" "WIM_MEEBO07" www24.meebo.com
+set address "Untrust" "WIM_msn01" webmessenger.msn.com
+set address "Untrust" "WIM_msn02" 207.46.28.79 255.255.255.255
+set address "Untrust" "WIM_msn03" 66.54.239.142 255.255.255.255
+set address "Untrust" "WIM_msn04" 65.54.239.212 255.255.255.255
+set address "Untrust" "WIM_msn05" 207.46.96.143 255.255.255.255
+set address "Untrust" "WIM_OT01" msn2g0.com
+set address "Untrust" "WIM_OT02" jmsn.net
+set address "Untrust" "WIM_OT03" www.koolim.com
+set address "Untrust" "WIM_OT04" messengeradictos.com
+set address "Untrust" "WIM_OT05" www8.messengerfx.com
+set address "Untrust" "WIM_OT06" wbmsn.net
+set address "Untrust" "WIM_OT07" msn.audiowatcher.com
+set address "Untrust" "WIM_wablet01" www.wablet.com
+set address "Untrust" "WIM_wablet02" www.wablet.us
+set address "Untrust" "www.looptech.com.cn" www.looptech.com.cn
+set address "Untrust" "www.youtube.com" www.youtube.com "youtube"
+set address "Untrust" "youtube1" 173.194.72.93 255.255.255.255
+set address "Untrust" "youtube2" 173.194.72.91 255.255.255.255
+set address "Untrust" "youtube3" 173.194.72.136 255.255.255.255
+set address "Untrust" "youtube4" 173.194.72.190 255.255.255.255
+set address "DMZ" "172.16.0.0/16" 172.16.0.0 255.255.0.0
+set address "DMZ" "172.16.1.1/25" 172.16.1.1 255.255.255.128
+set address "DMZ" "172.16.1.14" 172.16.1.14 255.255.255.255
+set address "DMZ" "172.16.1.2/32" 172.16.1.2 255.255.255.255
+set address "DMZ" "172.16.1.3/32" 172.16.1.3 255.255.255.255
+set address "DMZ" "172.16.1.7" 172.16.1.7 255.255.255.255 "Trouble ticket system"
+set address "DMZ" "176.16.1.1/25" 176.16.1.1 255.255.255.128
+set address "DMZ" "176.16.1.2/32" 176.16.1.2 255.255.255.255
+set address "DMZ" "CQ for SSLVPN DMZ" 192.168.0.0 255.255.255.0
+set address "DMZ" "IP_172.16.1.51" 172.16.1.51 255.255.255.255
+set address "DMZ" "IP_172.16.1.52" 172.16.1.52 255.255.255.255
+set address "DMZ" "IP_172.16.1.53" 172.16.1.53 255.255.255.255
+set address "DMZ" "IP_172.16.1.54" 172.16.1.54 255.255.255.255
+set address "DMZ" "Net_172.16.1" 172.16.1.0 255.255.255.0
+set address "DMZ" "Net_172.16.2" 172.16.2.0 255.255.255.0
+set address "DMZ" "Net_172.16.5" 172.16.5.0 255.255.255.0
+set address "DMZ" "test DMZ LAN" 192.168.201.0 255.255.255.0
+set address "DMZ" "VPN Server" 172.16.1.4 255.255.255.255 "OPENVPN Server"
+set ippool "Justin_Ip_pool" 192.168.100.91 192.168.100.95
+set ippool "VPN_Pool" 192.168.103.100 192.168.103.200
+set user "Anson" uid 7
+set user "Anson" type  auth
+set user "Anson" hash-password "02WE1Bga/AcJjP3sAhgWEhenu4i3hymHI73Ds="
+set user "Anson" "enable"
+set user "ikeuser" uid 5
+set user "ikeuser" ike-id u-fqdn "ikeuser@loop.com" share-limit 1
+set user "ikeuser" type  ike xauth
+set user "ikeuser" password "manager1"
+unset user "ikeuser" type auth
+set user "ikeuser" "enable"
+set user "jayson" uid 6
+set user "jayson" ike-id u-fqdn "jayson_wang@loop.com.tw" share-limit 1
+set user "jayson" type  auth ike xauth
+set user "jayson" remote ippool "VPN_Pool"
+set user "jayson" remote dns1 "192.168.100.252"
+set user "jayson" remote dns2 "192.168.100.253"
+set user "jayson" remote wins1 "192.168.100.252"
+set user "jayson" remote wins2 "192.168.100.253"
+set user "jayson" password "itmis8600"
+set user "jayson" "enable"
+set user "root" uid 8
+set user "root" type  auth
+set user "root" hash-password "02LELrk+ZRUQ1aG6UYEV+nO0FWy5ChBsPQixw="
+set user "root" "enable"
+set user "test" uid 4
+set user "test" ike-id u-fqdn "test@genesis" share-limit 1
+set user "test" type  ike xauth
+set user "test" remote ippool "VPN_Pool"
+set user "test" password "manager1"
+unset user "test" type auth
+set user "test" "enable"
+set user-group "IKE_Group" id 3
+set user-group "IKE_Group" user "ikeuser"
+set user-group "Remote_User_Group" id 2
+set user-group "Remote_User_Group" user "test"
+set ike gateway "Client_To_Site_VPN" dialup "jayson" Aggr outgoing-interface "ethernet2" preshare "pQ1pxoSbNNqv3JsC39CMqFR8+Vn7pYBMcw==" proposal "pre-g2-3des-sha" "pre-g2-3des-md5" "pre-g2-des-sha" "pre-g2-des-md5"
+unset ike gateway "Client_To_Site_VPN" nat-traversal udp-checksum
+set ike gateway "Client_To_Site_VPN" nat-traversal keepalive-frequency 0
+set ike gateway "Client_To_Site_VPN" xauth server "Local" user-group "Remote_User_Group"
+set ike gateway "Gateway_59.120.10.127" address 59.120.10.127 Main outgoing-interface "ethernet2" preshare "Mo7hnYKgNSrzYhsWw8Cjo/S5TEnJS+fslA==" sec-level compatible
+set ike gateway "To ChongChi_Gateway" address 124.162.57.210 Main outgoing-interface "ethernet2" preshare "EhAXJMP6NAOc+QsUiAC6ggoHJ0n83fyjog==" sec-level standard
+set ike gateway "CQ Gateway 2" address 124.162.57.211 Main outgoing-interface "ethernet2" preshare "8ufS9aiFN5dux4sgFCC8gQ21HDnh85moCcjprvgTCvvCjYNXbXjJBmnQ+/wJLhrtDNgdbsiNA2FbwDrAVQQ1XbM0op4OGjNoSPEwa8i6Y20bhGCqzgQYc7o=" sec-level compatible
+set ike gateway "CQ Gateway 2" cert peer-ca all
+set ike respond-bad-spi 1
+set ike soft-lifetime-buffer 60
+set ike gateway "Client_To_Site_VPN" heartbeat hello 10
+set ike gateway "Client_To_Site_VPN" heartbeat reconnect 60
+set ike gateway "Gateway_59.120.10.127" heartbeat hello 10
+set ike gateway "Gateway_59.120.10.127" heartbeat reconnect 60
+set vpn "Client_To_Site_VPN" gateway "Client_To_Site_VPN" replay tunnel idletime 0 proposal "g2-esp-des-md5" 
+set vpn "Client_To_Site_VPN" monitor
+set vpn "VPN_to_Taipei" gateway "Gateway_59.120.10.127" no-replay tunnel idletime 0 sec-level compatible
+set vpn "VPN_to_Taipei" monitor optimized rekey
+set vpn "VPN_to_ChangChi" gateway "To ChongChi_Gateway" no-replay tunnel idletime 0 sec-level standard
+set vpn "VPN_to_ChangChi" monitor optimized rekey
+set arp age 3600
+set pki authority default cert-status ocsp cert-verify hash "0E9290B27AA8BAF65D3C9229AFE8F31DB953B2DA"
+set pki authority hash 0E9290B27AA8BAF65D3C9229AFE8F31DB953B2DA cert-status ocsp cert-verify hash "0E9290B27AA8BAF65D3C9229AFE8F31DB953B2DA"
+set pki authority default scep ca-cgi "http://ipsec.verisign.com/cgi-bin/pkiclient.exe"
+set pki authority default scep ra-cgi "http://ipsec.verisign.com/cgi-bin/pkiclient.exe"
+set pki authority default scep ca-id "loopca"
+set pki authority default scep polling-int 30
+set pki authority default scep renew-start 30
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set pki x509 dn state-name "HC"
+set pki x509 dn local-name "HC"
+set pki x509 dn org-name "IT"
+set pki x509 dn org-unit-name "IT"
+set pki x509 dn name "Loop "
+set pki x509 dn email "justinsh@loop.com.tw"
+set pki x509 dn ip "203.160.249.252"
+set pki x509 default send-to "fidi_chen@genesis.com.tw"
+set group address "Trust" "AOL_User"
+set group address "Trust" "AOL_User" add "IP_192.168.1.21"
+set group address "Trust" "AOL_User" add "IP_192.168.1.25"
+set group address "Trust" "AOL_User" add "IP_192.168.100.75"
+set group address "Trust" "AOL_User" add "IP_192.168.100.89"
+set group address "Trust" "block video-group"
+set group address "Trust" "block video-group" add "10.3.1.21"
+set group address "Trust" "block video-group" add "192.168.1.73"
+set group address "Trust" "block video-group" add "192.168.100.1/32"
+set group address "Trust" "block video-group" add "192.168.13.53"
+set group address "Trust" "block video-group" add "192.168.13.54"
+set group address "Trust" "For SIP client"
+set group address "Trust" "For SIP client" add "192.168.17.51"
+set group address "Trust" "For SIP client" add "192.168.17.52"
+set group address "Trust" "For SIP client" add "192.168.17.53"
+set group address "Trust" "For SIP client" add "192.168.17.54"
+set group address "Trust" "Internal-6F-LAN"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.10.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.11.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.12.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.13.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.14.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.15.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.16.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.17.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.55.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.56.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.57.0"
+set group address "Trust" "Internal-6F-LAN" add "LAN-192.168.58.0"
+set group address "Trust" "Internal_All_Net"
+set group address "Trust" "Internal_All_Net" add "LAN-10.91.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.92.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.93.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.94.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.95.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.96.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.97.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.98.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-10.99.0.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.10.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.11.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.12.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.13.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.14.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.15.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.16.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.17.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.55.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.56.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.57.0"
+set group address "Trust" "Internal_All_Net" add "LAN-192.168.58.0"
+set group address "Trust" "Internal_All_Net" add "loopftp"
+set group address "Trust" "Internal_All_Net" add "Net_10.0"
+set group address "Trust" "Internal_All_Net" add "Net_10.1"
+set group address "Trust" "Internal_All_Net" add "Net_10.131"
+set group address "Trust" "Internal_All_Net" add "Net_10.132"
+set group address "Trust" "Internal_All_Net" add "Net_10.2"
+set group address "Trust" "Internal_All_Net" add "Net_10.3"
+set group address "Trust" "Internal_All_Net" add "Net_10.4"
+set group address "Trust" "Internal_All_Net" add "Net_10.40"
+set group address "Trust" "Internal_All_Net" add "Net_10.41"
+set group address "Trust" "Internal_All_Net" add "Net_10.9"
+set group address "Trust" "Internal_All_Net" add "Net_172.16.40"
+set group address "Trust" "Internal_All_Net" add "Net_172.16.41"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.1"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.100"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.101"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.120"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.121"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.2"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.3"
+set group address "Trust" "Internal_All_Net" add "Net_192.168.40"
+set group address "Trust" "justin_wk"
+set group address "Trust" "justin_wk" add "IP_192.168.100.86"
+set group address "Trust" "justin_wk" add "IP_192.168.100.91"
+set group address "Trust" "justin_wk" add "IP_192.168.100.92"
+set group address "Trust" "justin_wk" add "IP_192.168.100.93"
+set group address "Trust" "justin_wk" add "IP_192.168.100.95"
+set group address "Trust" "taiwan-vpn-group"
+set group address "Trust" "taiwan-vpn-group" add "IP_192.168.100.164"
+set group address "Trust" "taiwan-vpn-group" add "Net_192.168.100"
+set group address "Trust" "VPN_HsinChu"
+set group address "Trust" "VPN_HsinChu" add "Net_172.16.1.0"
+set group address "Trust" "VPN_HsinChu" add "Net_192.168.1"
+set group address "Trust" "VPN_HsinChu" add "Net_192.168.100"
+set group address "Untrust" "AOL"
+set group address "Untrust" "AOL" add "IP_152.163.208.57"
+set group address "Untrust" "AOL" add "IP_170.224.10.179"
+set group address "Untrust" "AOL" add "IP_205.188.179.134"
+set group address "Untrust" "AOL" add "IP_209.225.0.6"
+set group address "Untrust" "AOL" add "IP_64.12.185.119"
+set group address "Untrust" "AOL" add "IP_64.12.50.153"
+set group address "Untrust" "AOL" add "Net_205.188.135.0"
+set group address "Untrust" "AOL" add "Net_205.188.8.0"
+set group address "Untrust" "AOL" add "Net_220.130.117.0"
+set group address "Untrust" "AOL" add "Net_64.12.151.0"
+set group address "Untrust" "AOL" add "Net_64.12.161.0"
+set group address "Untrust" "Block internet ip"
+set group address "Untrust" "Block internet ip" add "110.188.0.16"
+set group address "Untrust" "Block internet ip" add "111.111.111.111"
+set group address "Untrust" "Block internet ip" add "122.226.102.230"
+set group address "Untrust" "Block internet ip" add "122.226.102.61"
+set group address "Untrust" "Block internet ip" add "140.112.19.195/32"
+set group address "Untrust" "Block internet ip" add "140.132.1.138"
+set group address "Untrust" "Block internet ip" add "169.254.134.154/255.255.255.255"
+set group address "Untrust" "Block internet ip" add "203.131.222.102"
+set group address "Untrust" "Block internet ip" add "208.105.226.235"
+set group address "Untrust" "Block internet ip" add "58.181.132.243/32"
+set group address "Untrust" "Block internet ip" add "61.139.219.203/255.255.255.255"
+set group address "Untrust" "Block internet ip" add "61.218.21.149/255.255.255.255"
+set group address "Untrust" "Block internet ip" add "61.218.32.198/255.255.255.255"
+set group address "Untrust" "Block internet ip" add "61.219.36.120"
+set group address "Untrust" "Block internet ip" add "61.219.36.250"
+set group address "Untrust" "Block internet ip" add "66.220.146.15"
+set group address "Untrust" "Block internet ip" add "69.63.76.147"
+set group address "Untrust" "Block internet ip" add "69.63.76.149"
+set group address "Untrust" "Block internet ip" add "71.100.138.24"
+set group address "Untrust" "Deny Internet attack" comment "Deny Internet  attack"
+set group address "Untrust" "Deny Internet attack" add "100.42.218.80"
+set group address "Untrust" "Deny Internet attack" add "106.187.92.95"
+set group address "Untrust" "Deny Internet attack" add "110.188.0.16"
+set group address "Untrust" "Deny Internet attack" add "111.251.160.129"
+set group address "Untrust" "Deny Internet attack" add "111.251.180.40"
+set group address "Untrust" "Deny Internet attack" add "113.10.221.93"
+set group address "Untrust" "Deny Internet attack" add "118.231.207.230"
+set group address "Untrust" "Deny Internet attack" add "119.75.212.200"
+set group address "Untrust" "Deny Internet attack" add "122.226.102.0"
+set group address "Untrust" "Deny Internet attack" add "122.226.102.230"
+set group address "Untrust" "Deny Internet attack" add "122.226.102.61"
+set group address "Untrust" "Deny Internet attack" add "122.226.102.62"
+set group address "Untrust" "Deny Internet attack" add "126.224.229.245"
+set group address "Untrust" "Deny Internet attack" add "140.112.19.195/32"
+set group address "Untrust" "Deny Internet attack" add "140.132.1.138"
+set group address "Untrust" "Deny Internet attack" add "142.0.79.99"
+set group address "Untrust" "Deny Internet attack" add "150.140.187.87"
+set group address "Untrust" "Deny Internet attack" add "176.61.138.19"
+set group address "Untrust" "Deny Internet attack" add "182.147.243.129"
+set group address "Untrust" "Deny Internet attack" add "182.147.243.130"
+set group address "Untrust" "Deny Internet attack" add "182.147.243.27"
+set group address "Untrust" "Deny Internet attack" add "183.13.208.240"
+set group address "Untrust" "Deny Internet attack" add "183.136.215.26"
+set group address "Untrust" "Deny Internet attack" add "183.136.215.40"
+set group address "Untrust" "Deny Internet attack" add "189.119.29.145"
+set group address "Untrust" "Deny Internet attack" add "193.204.79.48"
+set group address "Untrust" "Deny Internet attack" add "200.203.126.103"
+set group address "Untrust" "Deny Internet attack" add "200.55.198.251"
+set group address "Untrust" "Deny Internet attack" add "201.62.213.118"
+set group address "Untrust" "Deny Internet attack" add "203.174.36.146"
+set group address "Untrust" "Deny Internet attack" add "203.74.167.1"
+set group address "Untrust" "Deny Internet attack" add "210.202.44.193"
+set group address "Untrust" "Deny Internet attack" add "210.64.59.131"
+set group address "Untrust" "Deny Internet attack" add "211.138.238.198"
+set group address "Untrust" "Deny Internet attack" add "211.75.225.184"
+set group address "Untrust" "Deny Internet attack" add "213.171.220.245"
+set group address "Untrust" "Deny Internet attack" add "216.250.24.64"
+set group address "Untrust" "Deny Internet attack" add "217.149.5.169"
+set group address "Untrust" "Deny Internet attack" add "218.248.240.178"
+set group address "Untrust" "Deny Internet attack" add "218.248.240.18"
+set group address "Untrust" "Deny Internet attack" add "218.248.240.209"
+set group address "Untrust" "Deny Internet attack" add "218.248.240.21/32"
+set group address "Untrust" "Deny Internet attack" add "218.93.205.133"
+set group address "Untrust" "Deny Internet attack" add "218.93.205.163"
+set group address "Untrust" "Deny Internet attack" add "222.186.34.69"
+set group address "Untrust" "Deny Internet attack" add "222.76.211.7"
+set group address "Untrust" "Deny Internet attack" add "222.76.211.8"
+set group address "Untrust" "Deny Internet attack" add "42.68.12.57"
+set group address "Untrust" "Deny Internet attack" add "58.221.59.172"
+set group address "Untrust" "Deny Internet attack" add "59.120.200.226"
+set group address "Untrust" "Deny Internet attack" add "61.237.159.25"
+set group address "Untrust" "Deny Internet attack" add "65.49.92.107"
+set group address "Untrust" "Deny Internet attack" add "65.49.92.184"
+set group address "Untrust" "Deny Internet attack" add "65.49.92.227"
+set group address "Untrust" "Deny Internet attack" add "65.49.92.251"
+set group address "Untrust" "Deny Internet attack" add "69.67.47.182"
+set group address "Untrust" "Deny Internet attack" add "71.100.138.24"
+set group address "Untrust" "Deny Internet attack" add "74.3.209.153/32"
+set group address "Untrust" "Deny Internet attack" add "74.50.95.6"
+set group address "Untrust" "Deny Internet attack" add "81.6.5.180"
+set group address "Untrust" "Deny Internet attack" add "94.242.150.189"
+set group address "Untrust" "Deny Internet attack" add "external attack ip"
+set group address "Untrust" "Deny Internet attack" add "ftp try"
+set group address "Untrust" "Deny Internet attack" add "hacker attack"
+set group address "Untrust" "Deny Internet attack" add "IP_114.29.194.39"
+set group address "Untrust" "Deny Internet attack" add "pop3 attack 1"
+set group address "Untrust" "Deny Internet attack" add "pop3 attack 2"
+set group address "Untrust" "Deny Internet attack" add "pop3 attack 3"
+set group address "Untrust" "Deny Internet attack" add "pop3 attack 4"
+set group address "Untrust" "Deny Internet attack" add "pop3 attack 5"
+set group address "Untrust" "MSN_Login"
+set group address "Untrust" "MSN_Login" add "MSN_Login1"
+set group address "Untrust" "MSN_Login" add "MSN_Login2"
+set group address "Untrust" "trojan destination"
+set group address "Untrust" "trojan destination" add "114.80.67.20"
+set group address "Untrust" "trojan destination" add "114.80.67.89"
+set group address "Untrust" "trojan destination" add "114.80.67.90"
+set group address "Untrust" "trojan destination" add "222.76.211.7"
+set group address "Untrust" "trojan destination" add "71.100.138.24"
+set group address "Untrust" "trojan destination" add "91.215.158.79"
+set group address "Untrust" "trojan destination" add "91.215.158.80"
+set group address "Untrust" "VPN_Taipei"
+set group address "Untrust" "VPN_Taipei" add "Net_192.168.121.0"
+set group address "Untrust" "VPN_Taipei" add "Net_192.168.40.0"
+set group address "Untrust" "WebIM_LIST"
+set group address "Untrust" "WebIM_LIST" add "WIM_ebuddy01"
+set group address "Untrust" "WebIM_LIST" add "WIM_ebuddy02"
+set group address "Untrust" "WebIM_LIST" add "WIM_ebuddy03"
+set group address "Untrust" "WebIM_LIST" add "WIM_ebuddy04"
+set group address "Untrust" "WebIM_LIST" add "WIM_GOOWY01"
+set group address "Untrust" "WebIM_LIST" add "WIM_GOOWY02"
+set group address "Untrust" "WebIM_LIST" add "WIM_GOOWY03"
+set group address "Untrust" "WebIM_LIST" add "WIM_GOOWY04"
+set group address "Untrust" "WebIM_LIST" add "WIM_iloveim01"
+set group address "Untrust" "WebIM_LIST" add "WIM_iloveim02"
+set group address "Untrust" "WebIM_LIST" add "WIM_iloveim03"
+set group address "Untrust" "WebIM_LIST" add "WIM_imhaha01"
+set group address "Untrust" "WebIM_LIST" add "WIM_imhaha02"
+set group address "Untrust" "WebIM_LIST" add "WIM_imunitive01"
+set group address "Untrust" "WebIM_LIST" add "WIM_imunitive02"
+set group address "Untrust" "WebIM_LIST" add "WIM_mabber01"
+set group address "Untrust" "WebIM_LIST" add "WIM_mabber02"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO01"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO02"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO03"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO04"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO05"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO06"
+set group address "Untrust" "WebIM_LIST" add "WIM_MEEBO07"
+set group address "Untrust" "WebIM_LIST" add "WIM_msn01"
+set group address "Untrust" "WebIM_LIST" add "WIM_msn02"
+set group address "Untrust" "WebIM_LIST" add "WIM_msn03"
+set group address "Untrust" "WebIM_LIST" add "WIM_msn04"
+set group address "Untrust" "WebIM_LIST" add "WIM_msn05"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT01"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT02"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT03"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT04"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT05"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT06"
+set group address "Untrust" "WebIM_LIST" add "WIM_OT07"
+set group address "Untrust" "WebIM_LIST" add "WIM_wablet01"
+set group address "Untrust" "WebIM_LIST" add "WIM_wablet02"
+set group service "MultiVideo_IN"
+set group service "MutiVideo_OUT"
+set group service "Stream Media"
+set group service "Stream Media" add "Real Media"
+set group service "Stream Media" add "RTSP"
+set group service "Stream Media" add "VDO Live"
+set group service "vpn-service"
+set group service "vpn-service" add "PING"
+set group service "vpn-service" add "TELNET"
+set scheduler "Mail GateWay test" recurrent sunday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "Mail GateWay test" recurrent monday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "Mail GateWay test" recurrent tuesday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "Mail GateWay test" recurrent wednesday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "Mail GateWay test" recurrent thursday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "Mail GateWay test" recurrent friday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "Mail GateWay test" recurrent saturday start 0:0 stop 14:0 start 14:0 stop 24:0
+set scheduler "FTP_NoneWorking" once start 9/9/2004 0:0 stop 9/30/2004 0:0
+set scheduler "FTP_NoneWorking" recurrent sunday start 0:0 stop 24:0
+set scheduler "FTP_NoneWorking" recurrent monday start 0:0 stop 8:0 start 18:0 stop 24:0
+set scheduler "FTP_NoneWorking" recurrent tuesday start 0:0 stop 8:0 start 18:0 stop 24:0
+set scheduler "FTP_NoneWorking" recurrent wednesday start 0:0 stop 8:0 start 18:0 stop 24:0
+set scheduler "FTP_NoneWorking" recurrent thursday start 0:0 stop 8:0 start 18:0 stop 24:0
+set scheduler "FTP_NoneWorking" recurrent friday start 0:0 stop 8:0 start 18:0 stop 24:0
+set scheduler "FTP_NoneWorking" recurrent saturday start 0:0 stop 24:0
+set scheduler "Mail [Tea Time]" recurrent sunday start 12:0 stop 13:0 start 17:0 stop 24:0
+set scheduler "Mail [Tea Time]" recurrent monday start 12:0 stop 13:0 start 17:0 stop 24:0
+set scheduler "Mail [Tea Time]" recurrent tuesday start 12:0 stop 13:0 start 17:0 stop 24:0
+set scheduler "Mail [Tea Time]" recurrent wednesday start 12:0 stop 13:0 start 17:0 stop 24:0
+set scheduler "Mail [Tea Time]" recurrent thursday start 12:0 stop 13:0 start 17:0 stop 24:0
+set scheduler "For RD 8096" once start 4/26/2005 16:0 stop 5/30/2005 18:0
+set scheduler "For Akonix_Manager" once start 2/27/2007 12:0 stop 3/2/2007 0:0 comment "Test "
+set scheduler "For HRMS" once start 6/15/2011 14:0 stop 6/15/2011 15:30
+set scheduler "Spring NCTU Server" recurrent sunday start 8:0 stop 22:0
+set scheduler "Spring NCTU Server" recurrent monday start 8:0 stop 22:0
+set scheduler "Spring NCTU Server" recurrent tuesday start 8:0 stop 22:0
+set scheduler "Spring NCTU Server" recurrent wednesday start 8:0 stop 22:0
+set scheduler "Spring NCTU Server" recurrent thursday start 8:0 stop 22:0
+set scheduler "Spring NCTU Server" recurrent friday start 8:0 stop 22:0
+set scheduler "Spring NCTU Server" recurrent saturday start 8:0 stop 22:0
+set scheduler "For MCBA consult" once start 8/12/2015 9:0 stop 8/12/2015 18:30 comment "For MCBA consult "
+set scheduler "Openfind Mail check" once start 3/20/2015 11:0 stop 3/20/2015 18:0 comment "for Openfind"
+set scheduler "for spamsqr" once start 5/22/2013 11:30 stop 5/22/2013 23:0 comment "for spamsqr"
+set attack db mode Update
+set attack db schedule weekly Sunday 00:00
+set url protocol sc-cpa
+exit
+set policy id 318 name "for cctweb cq license" from "DMZ" to "Trust"  "172.16.1.7" "192.168.100.200" "ANY" permit log 
+set policy id 318
+set dst-address "192.168.100.205"
+set dst-address "192.168.100.206"
+set dst-address "IP_192.168.100.209"
+set dst-address "IP_192.168.100.89"
+exit
+set policy id 313 from "Untrust" to "DMZ"  "182.147.243.130" "Any" "ANY" deny log 
+set policy id 313
+set src-address "182.147.243.27"
+set src-address "Block internet ip"
+set src-address "Deny Internet attack"
+exit
+set policy id 292 name "HsinChu_192.168.100 to Chungchi" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "Local_LAN_192.168.100.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 24 pair-policy 291 log count 
+set policy id 293 name "HsinChu_10.3 to Chungchi" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "Net_10.0" "ANY" tunnel vpn "VPN_to_ChangChi" id 23 pair-policy 290 log count 
+set policy id 250 name "HsinChu_10.3 to Chungchi" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "LAN-192.168.13.0" "ANY" tunnel vpn "VPN_to_ChangChi" id 14 pair-policy 249 log count 
+set policy id 300 name "Chungchi to HsinChu LAN55" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "LAN-192.168.55.0" "ANY" tunnel vpn "VPN_to_ChangChi" id 30 pair-policy 303 log count 
+set policy id 301 name "Chungchi to HsinChu LAN56" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "LAN-192.168.56.0" "ANY" tunnel vpn "VPN_to_ChangChi" id 31 pair-policy 304 log count 
+set policy id 302 name "Chungchi to HsinChu LAN56" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "LAN-192.168.57.0" "ANY" tunnel vpn "VPN_to_ChangChi" id 32 pair-policy 305 log count 
+set policy id 295 name "Chungchi to HsinChu LAN58" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "LAN-192.168.58.0" "ANY" tunnel vpn "VPN_to_ChangChi" id 26 pair-policy 296 log count 
+set policy id 314 name "HsinChu_10.93 to Chungchi" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "Net_10.93" "ANY" tunnel vpn "VPN_to_ChangChi" id 34 pair-policy 315 log count 
+set policy id 320 name "TPE_10.41 to Chungchi" from "Untrust" to "Trust"  "Remote_Lan_192.168.0.0/24" "Net_10.41" "ANY" tunnel vpn "VPN_to_ChangChi" id 35 pair-policy 321 log count 
+set policy id 240 from "Untrust" to "Trust"  "Deny Internet attack" "Any" "ANY" deny log 
+set policy id 232 name "TEST" from "Untrust" to "DMZ"  "192.168.102.1/255.255.255.255" "172.16.1.1/25" "ICMP-ANY" permit log 
+set policy id 288 from "Untrust" to "Trust"  "black list" "Internal_All_Net" "ANY" deny log 
+set policy id 269 name "loopftp" from "Untrust" to "Trust"  "Any" "loopftp" "FTP" permit log 
+set policy id 230 from "DMZ" to "Untrust"  "176.16.1.2/32" "211.23.55.66/32" "ANY" permit log 
+set policy id 267 name "SSL VPN" from "Untrust" to "DMZ"  "Any" "172.16.1.14" "HTTPS" permit log 
+set policy id 267
+set dst-address "VPN Server"
+set service "openvpn 943"
+set service "openvpn461"
+exit
+set policy id 317 name "Trouble Ticket System" from "Untrust" to "DMZ"  "Any" "172.16.1.7" "HTTP" permit log 
+set policy id 229 name "Ping test" from "Untrust" to "DMZ"  "211.23.55.66/32" "172.16.1.2/32" "ANY" permit log 
+set policy id 226 name "WWW" from "Untrust" to "DMZ"  "Any" "172.16.1.2/32" "HTTP" permit log count 
+set policy id 226
+set service "ICMP-ANY"
+exit
+set policy id 226 disable
+set policy id 291 name "HsinChu_192.168.100 to Chungchi" from "Trust" to "Untrust"  "Local_LAN_192.168.100.0/24" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 24 pair-policy 292 log count 
+set policy id 290 name "HsinChu_10.3 to Chungchi" from "Trust" to "Untrust"  "Net_10.0" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 23 pair-policy 293 log count 
+set policy id 249 name "HsinChu_10.3 to Chungchi" from "Trust" to "Untrust"  "LAN-192.168.13.0" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 14 pair-policy 250 log count 
+set policy id 303 name "Chungchi to HsinChu LAN55" from "Trust" to "Untrust"  "LAN-192.168.55.0" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 30 pair-policy 300 log count 
+set policy id 304 name "Chungchi to HsinChu LAN56" from "Trust" to "Untrust"  "LAN-192.168.56.0" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 31 pair-policy 301 log count 
+set policy id 305 name "Chungchi to HsinChu LAN56" from "Trust" to "Untrust"  "LAN-192.168.57.0" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 32 pair-policy 302 log count 
+set policy id 296 name "Chungchi to HsinChu LAN58" from "Trust" to "Untrust"  "LAN-192.168.58.0" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 26 pair-policy 295 log count 
+set policy id 315 name "HsinChu_10.93 to Chungchi" from "Trust" to "Untrust"  "Net_10.93" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 34 pair-policy 314 log count 
+set policy id 321 name "TPE_10.41 to Chungchi" from "Trust" to "Untrust"  "Net_10.41" "Remote_Lan_192.168.0.0/24" "ANY" tunnel vpn "VPN_to_ChangChi" id 35 pair-policy 320 log count 
+set policy id 185 from "Trust" to "Untrust"  "VPN_HsinChu" "VPN_Taipei" "ANY" tunnel vpn "VPN_to_Taipei" id 4 pair-policy 188 log count 
+set policy id 289 from "Trust" to "Untrust"  "192.168.40.55/32" "Any" "ANY" deny log 
+set policy id 271 from "Trust" to "Untrust"  "Any" "Block internet ip" "ANY" deny log 
+set policy id 271
+set dst-address "trojan destination"
+exit
+set policy id 307 from "Trust" to "Untrust"  "Any" "youtube1" "ANY" deny log 
+set policy id 307
+set dst-address "youtube2"
+set dst-address "youtube3"
+set dst-address "youtube4"
+exit
+set policy id 308 from "Trust" to "Untrust"  "Any" "facebook1" "ANY" deny log 
+set policy id 308
+set dst-address "facebook2"
+set dst-address "facebook3"
+set dst-address "facebook4"
+exit
+set policy id 323 from "Trust" to "Untrust"  "Any" "72.11.141.18" "ANY" deny log 
+set policy id 323
+set dst-address "tw116"
+exit
+set policy id 275 name "ftp test" from "Trust" to "Untrust"  "192.168.100.91/32" "Any" "FTP" permit log 
+set policy id 191 name "WSA segment" from "Trust" to "Untrust"  "192.168.3.0/24" "Any" "ANY" permit log 
+set policy id 225 from "Trust" to "Untrust"  "IP_192.168.100.1" "Any" "ANY" permit log 
+set policy id 225 disable
+set policy id 224 from "Trust" to "DMZ"  "IP_192.168.100.89" "Net_172.16.1" "ANY" permit log 
+set policy id 264 name "172.16.1.2" from "DMZ" to "Trust"  "172.16.1.2/32" "Net_10.9" "PING" permit 
+set policy id 264
+set service "SQL*Net V2"
+exit
+set policy id 278 from "Trust" to "Untrust"  "LAN-192.168.13.0" "LAB test machine" "SNMP" permit log 
+set policy id 278
+set service "TELNET"
+exit
+set policy id 222 from "Trust" to "Untrust"  "Internal-6F-LAN" "Any" "8080" permit log 
+set policy id 222
+set src-address "Internal_All_Net"
+exit
+set policy id 238 from "Trust" to "Untrust"  "Any" "www.looptech.com.cn" "8383" permit log 
+set policy id 238 disable
+set policy id 319 name "for PLM CCTV" from "Untrust" to "Trust"  "Any" "IP_10.133.1.30" "8080" permit log 
+set policy id 319
+set dst-address "IP_10.133.1.31"
+set dst-address "IP_10.133.1.32"
+set service "HTTP"
+set service "HTTPS"
+set service "PING"
+set service "SNMP"
+set service "TELNET"
+set service "Win-Terminal"
+exit
+set policy id 324 name "iNMS server test" from "Untrust" to "Trust"  "Any" "Peter iNMS test server" "ANY" permit log 
+set policy id 324 disable
+set policy id 309 name "jayson home" from "Untrust" to "Trust"  "jayson home" "192.168.100.91/32" "ANY" permit log 
+set policy id 309 disable
+set policy id 311 name "for Coverity server" from "Untrust" to "Trust"  "Any" "Coverity Connect server" "8080" permit log 
+set policy id 311 application "HTTP"
+set policy id 312 name "SEP client report back" from "Untrust" to "Trust"  "Any" "IP_192.168.100.89" "SEP8014" permit log 
+set policy id 244 from "Untrust" to "Trust"  "IP_124.162.57.210" "10.0.45.7/32" "tcp2302" permit log 
+set policy id 178 name "OverAll Hsiao for MCBA" from "Untrust" to "Trust"  "114.35.84.201" "IP_192.168.100.248" "FTP" permit schedule "For MCBA consult" log 
+set policy id 178
+set src-address "61.62.126.0"
+set src-address "IP_59.126.52.202"
+set src-address "overall_ip"
+set service "TELNET"
+exit
+set policy id 245 name "for HRMS RDP to HR server" from "Untrust" to "Trust"  "HRMS" "IP_192.168.100.242" "Win-Terminal" permit schedule "For HRMS" log 
+set policy id 188 from "Untrust" to "Trust"  "VPN_Taipei" "VPN_HsinChu" "ANY" tunnel vpn "VPN_to_Taipei" id 4 pair-policy 185 log count 
+set policy id 109 from "Untrust" to "Trust"  "Dial-Up VPN" "Net_192.168.100" "ANY" tunnel vpn "Client_To_Site_VPN" id 7 log 
+set policy id 221 name "Dennis_1194" from "Untrust" to "Trust"  "218.32.0.0/24" "10.0.2.254/255.255.255.255" "Dennis_1194" permit log 
+set policy id 221
+set service "ICMP-ANY"
+exit
+set policy id 218 name "60.250.52.28" from "Untrust" to "Trust"  "60.250.52.28/255.255.255.255" "IP_192.168.100.246" "POP3" deny log 
+set policy id 217 name "164.138.61.59" from "Untrust" to "Trust"  "164.138.61.59/255.255.255.255" "IP_192.168.100.246" "POP3" deny log 
+set policy id 294 from "Untrust" to "Trust"  "Any" "IP_192.168.100.246" "DNS" nat dst ip 192.168.100.64 port 53 permit log 
+set policy id 137 name "for Outlook can't access 25 por" from "Untrust" to "Trust"  "Any" "IP_192.168.100.246" "HTTPS" nat dst ip 192.168.100.2 port 25 permit log count 
+set policy id 137
+set service "MAIL"
+set service "SMTP"
+exit
+set policy id 306 from "Untrust" to "Trust"  "IP_124.162.57.211" "IP_192.168.100.246" "MAIL" permit log 
+set policy id 306
+set service "SMTP"
+set service "SSMTP"
+exit
+set policy id 306 disable
+set policy id 310 name "web cam view" from "Untrust" to "Trust"  "Any" "7F Web Cam" "HTTP" permit log 
+set policy id 310
+set dst-address "lab web cam1"
+set dst-address "lab web cam2"
+exit
+set policy id 310 application "HTTP"
+set policy id 211 from "Untrust" to "Trust"  "Any" "Any" "HTTPS" deny log 
+set policy id 206 name "SSMTP" from "Trust" to "Untrust"  "Internal-6F-LAN" "Any" "SSMTP" permit log 
+set policy id 206
+set src-address "Internal_All_Net"
+exit
+set policy id 193 name "DNS Server" from "Trust" to "Untrust"  "IP_192.168.100.252" "Any" "DNS" permit log 
+set policy id 193
+set src-address "IP_192.168.100.253"
+exit
+set policy id 195 from "Untrust" to "Trust"  "Any" "Any" "POP3" permit log 
+set policy id 190 name "Ponycom Test" from "Untrust" to "Untrust"  "192.168.100.0/255.255.255.0" "Any" "ANY" permit log 
+set policy id 175 name "天津祿普Mail Server" from "Trust" to "Untrust"  "Any" "Primatelindia01" "MAIL" permit log 
+set policy id 175
+set dst-address "Primatelindia02"
+set dst-address "Primatelindia03"
+set service "POP3"
+set service "SMTP"
+exit
+set policy id 171 from "DMZ" to "Untrust"  "172.16.1.3/32" "Any" "ANY" permit log 
+set policy id 167 name "DMZ Server" from "DMZ" to "Untrust"  "176.16.1.1/25" "Any" "ANY" permit log 
+set policy id 166 name "IM_block" from "DMZ" to "Untrust"  "Net_172.16.1" "MSN_Login" "ANY" reject log 
+set policy id 166
+set dst-address "WebIM_LIST"
+exit
+set policy id 166 disable
+set policy id 280 name "Spring to NCTU proxy" from "Trust" to "Untrust"  "Net_10.0" "NCTU library Server" "port 3128" permit schedule "Spring NCTU Server" log 
+set policy id 163 name "WebIM" from "Trust" to "Untrust"  "Internal_All_Net" "WebIM_LIST" "ANY" reject log url-filter 
+set policy id 163 disable
+set policy id 106 from "Trust" to "Untrust"  "Any" "Any" "FTP" permit log 
+set policy id 106
+set service "HTTP"
+set service "HTTPS"
+set service "ICMP-ANY"
+set service "TELNET"
+exit
+set policy id 316 from "Trust" to "Untrust"  "Dennis Punjabi" "Any" "IRC service" permit log 
+set policy id 316
+set src-address "Dennis Punjabi VM"
+exit
+set policy id 162 from "Trust" to "Untrust"  "192.168.100.36/255.255.255.255" "Any" "ANY" permit log 
+set policy id 162 disable
+set policy id 155 name "For Mail" from "Trust" to "Trust"  "IP_10.0.8.2" "Any" "POP3" permit log 
+set policy id 155
+set service "SMTP"
+exit
+set policy id 155 disable
+set policy id 62 name "AOL" from "Trust" to "Untrust"  "AOL_User" "Any" "ANY" nat src dip-id 5 permit log 
+set policy id 55 name "AOL" from "Trust" to "Untrust"  "Internal-6F-LAN" "AOL" "ANY" nat src dip-id 4 permit log 
+set policy id 55
+set src-address "Internal_All_Net"
+exit
+set policy id 134 name "MSN_Block01" from "Trust" to "Untrust"  "Any" "MSN_Login" "ANY" permit log 
+set policy id 115 name "VNC_CLIENT" from "Trust" to "Untrust"  "IP_192.168.1.207" "Any" "DNS" permit log 
+set policy id 115
+set src-address "IP_192.168.100.83"
+set src-address "IP_192.168.100.85"
+set src-address "IP_192.168.100.86"
+set src-address "IP_192.168.100.87"
+set src-address "IP_192.168.100.89"
+set src-address "IP_192.168.100.91"
+set src-address "IP_192.168.100.92"
+set src-address "IP_192.168.100.93"
+set src-address "IP_192.168.100.95"
+set service "SNMP"
+set service "SSH"
+exit
+set policy id 86 from "Trust" to "Untrust"  "Net_192.168.100" "Any" "DNS" permit log 
+set policy id 86
+set service "ICMP-ANY"
+set service "POP3"
+set service "SMTP"
+set service "TELNET"
+exit
+set policy id 136 name "Other Mail Server" from "Trust" to "Untrust"  "Internal-6F-LAN" "mail.primatelindia.com" "DNS" permit log 
+set policy id 136
+set src-address "Internal_All_Net"
+set service "POP3"
+set service "SMTP"
+exit
+set policy id 136 disable
+set policy id 101 from "Untrust" to "Trust"  "Any" "LinuxDns" "DNS" permit log 
+set policy id 100 from "Trust" to "Untrust"  "IP_192.168.100.2" "Any" "DNS" permit log 
+set policy id 100
+set src-address "IP_192.168.100.245"
+set src-address "IP_192.168.100.246"
+set src-address "IP_192.168.100.247"
+set src-address "IP_192.168.100.6"
+set service "MAIL"
+set service "POP3"
+exit
+set policy id 75 from "DMZ" to "Untrust"  "Net_172.16.1" "Any" "ANY" permit log 
+set policy id 284 name "RPM access" from "DMZ" to "Trust"  "Net_172.16.1" "192.168.100.200" "8080" permit log 
+set policy id 279 name "DMZ to MCBA" from "DMZ" to "Trust"  "Net_172.16.1" "IP_192.168.100.248" "PING" permit log 
+set policy id 279
+set service "TELNET"
+exit
+set policy id 298 name "DMZ to MCBA" from "DMZ" to "Trust"  "Net_172.16.2" "IP_192.168.100.248" "PING" permit log 
+set policy id 298
+set src-address "Net_172.16.5"
+set service "TELNET"
+exit
+set policy id 38 name "DMZ_Internal" from "DMZ" to "Trust"  "Net_172.16.1" "192.168.100.196" "ANY" permit log 
+set policy id 38
+set dst-address "192.168.100.91/32"
+set dst-address "192.168.100.92"
+set dst-address "IP_192.168.100.132"
+set dst-address "IP_192.168.100.209"
+set dst-address "IP_192.168.100.246"
+set dst-address "IP_192.168.100.252"
+set dst-address "IP_192.168.100.253"
+set dst-address "IP_192.168.100.84"
+exit
+set policy id 50 from "Untrust" to "Trust"  "IP_59.120.10.129" "IP_192.168.100.6" "SPAM_CTL" nat dst ip 192.168.100.6 permit log 
+set policy id 50
+set service "VNC_5800"
+exit
+set policy id 50 disable
+set policy id 281 from "DMZ" to "Trust"  "Net_172.16.1" "10.0.45.7/32" "PING" permit log 
+set policy id 281
+set src-address "Net_172.16.2"
+set src-address "test DMZ LAN"
+set dst-address "192.168.100.91/32"
+set service "tcp2302"
+set service "tcp6106"
+exit
+set policy id 273 name "DMZ to RDP PC of MIS" from "DMZ" to "Trust"  "Net_172.16.1" "Any" "tcp2302" permit log 
+set policy id 273
+set service "tcp2303"
+set service "tcp6106"
+set service "Win-Terminal"
+exit
+set policy id 285 from "DMZ" to "Trust"  "Net_172.16.1" "loopts01" "tcp6160" permit 
+set policy id 299 from "DMZ" to "Trust"  "Net_172.16.2" "loopts01" "tcp6160" permit 
+set policy id 39 from "DMZ" to "Trust"  "Net_172.16.1" "Internal-6F-LAN" "Microsoft_DS" permit log 
+set policy id 39
+set dst-address "Internal_All_Net"
+exit
+set policy id 40 name "Trust_DMZ_ALL" from "Trust" to "DMZ"  "Internal_All_Net" "Net_172.16.1" "ANY" permit log 
+set policy id 192 from "Untrust" to "Trust"  "192.168.102.1/32" "IP_192.168.100.131" "Sawmill514" permit log count 
+set policy id 235 from "DMZ" to "Trust"  "CQ for SSLVPN DMZ" "10.0.45.7/32" "ANY" permit log 
+set policy id 235
+set src-address "Net_172.16.1"
+set src-address "test DMZ LAN"
+set dst-address "LAN-10.93.0.0"
+set dst-address "LAN-192.168.13.0"
+set dst-address "LAN-192.168.14.0"
+set dst-address "LAN-192.168.55.0"
+set dst-address "LAN-192.168.56.0"
+set dst-address "LAN-192.168.57.0"
+set dst-address "LAN-192.168.58.0"
+exit
+set policy id 236 from "Trust" to "DMZ"  "IP_192.168.100.209" "Net_172.16.1" "ANY" permit log 
+set policy id 237 name "Telnet-211.23.52.49 for dennis" from "Untrust" to "Trust"  "Any" "192.168.10.35/32" "ICMP-ANY" nat dst ip 192.168.10.35 permit log 
+set policy id 237
+set service "TELNET"
+exit
+set policy id 161 name "Spam Sqr 維護用" from "Untrust" to "Trust"  "IP_60.248.71.162" "IP_192.168.100.2" "HTTP" permit schedule "for spamsqr" log 
+set policy id 161
+set service "HTTPS"
+set service "SSH"
+exit
+set policy id 79 name "www.loop.com.tw redirect" from "Untrust" to "Trust"  "Any" "IP_192.168.100.2" "HTTP" permit log 
+set policy id 79
+set dst-address "IP_192.168.100.84"
+set service "HTTPS"
+exit
+set policy id 287 from "Trust" to "DMZ"  "192.168.100.0/24" "172.16.0.0/16" "ANY" permit log 
+set policy id 287
+set src-address "LAN-10.91.0.0"
+set src-address "LAN-10.92.0.0"
+set src-address "LAN-10.93.0.0"
+set src-address "LAN-10.94.0.0"
+set src-address "LAN-10.95.0.0"
+set src-address "LAN-10.96.0.0"
+set src-address "LAN-10.97.0.0"
+set src-address "LAN-10.98.0.0"
+set src-address "LAN-10.99.0.0"
+set src-address "LAN-192.168.13.0"
+set src-address "LAN-192.168.55.0"
+set src-address "LAN-192.168.56.0"
+set src-address "LAN-192.168.57.0"
+set src-address "LAN-192.168.58.0"
+set dst-address "CQ for SSLVPN DMZ"
+set dst-address "test DMZ LAN"
+exit
+set policy id 49 name "Mail Send From Taipei" from "Untrust" to "Trust"  "IP_211.23.52.60" "IP_192.168.100.246" "HTTP" permit schedule "Openfind Mail check" log 
+set policy id 49
+set src-address "IP_59.120.10.129"
+set src-address "OpenFind"
+set dst-address "IP_192.168.100.247"
+set service "HTTPS"
+set service "MAIL"
+set service "SSH"
+exit
+set policy id 49 disable
+set policy id 44 name "Mail to SpamSQR" from "Untrust" to "Trust"  "Any" "IP_192.168.100.246" "MAIL" nat dst ip 192.168.100.2 permit log count 
+set policy id 140 name "Mail Server" from "Untrust" to "Trust"  "Any" "IP_192.168.100.246" "HTTP" permit log traffic gbw 100 priority 1 
+set policy id 140
+set service "HTTPS"
+set service "IMAP"
+set service "POP3"
+set service "SMTP"
+set service "TCP_8888"
+exit
+set policy id 125 name "NTP_Network Time Check" from "Trust" to "Untrust"  "Internal-6F-LAN" "Any" "FTP_817" permit log 
+set policy id 125
+set src-address "Internal_All_Net"
+set service "MAIL"
+set service "NTP"
+set service "POP3"
+exit
+set policy id 1 from "Trust" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 37 name "DMZ_External_All" from "DMZ" to "Untrust"  "Net_172.16.1" "Any" "ANY" nat src dip-id 6 permit log 
+set policy id 37 disable
+set policy id 297 name "DMZ_Internal" from "DMZ" to "Trust"  "Net_172.16.2" "192.168.100.196" "ANY" permit log 
+set policy id 297
+set src-address "Net_172.16.5"
+set dst-address "192.168.100.91/32"
+set dst-address "192.168.100.92"
+set dst-address "IP_192.168.100.132"
+set dst-address "IP_192.168.100.209"
+set dst-address "IP_192.168.100.246"
+set dst-address "IP_192.168.100.252"
+set dst-address "IP_192.168.100.253"
+set dst-address "IP_192.168.100.84"
+exit
+set vpn "Client_To_Site_VPN" proxy-id local-ip 192.168.100.0/24 remote-ip 255.255.255.255/32 "ANY"
+set syslog config "192.168.100.94"
+set syslog config "192.168.100.94" facilities local0 local0
+set syslog config "192.168.100.94" log traffic
+set syslog src-interface ethernet1
+set syslog enable
+set log module system level emergency destination console
+set log module system level critical destination console
+unset log module system level alert destination email
+unset log module system level critical destination email
+set firewall log-self
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+set dl-buf size 4718592
+set ntp server "220.130.158.52"
+set ntp server src-interface "ethernet2"
+set ntp server backup1 "192.168.100.252"
+set ntp server backup1 src-interface "ethernet1"
+set ntp server backup2 "192.168.100.253"
+set ntp interval 1440
+set snmp community "fwsnmp" Read-Write Trap-on  traffic version v2c
+set snmp name "ns25"
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset add-default-route
+set route  0.0.0.0/0 interface ethernet2 gateway 192.168.102.1
+set route  192.168.100.0/24 interface ethernet1 gateway 192.168.101.254
+set route  10.2.0.0/16 interface ethernet1 gateway 192.168.101.254
+set route  10.3.0.0/16 interface ethernet1 gateway 192.168.101.254
+set route  10.4.0.0/16 interface ethernet1 gateway 192.168.101.254
+set route  192.168.1.0/24 interface ethernet1 gateway 192.168.101.254
+set route  192.168.2.0/24 interface ethernet1 gateway 192.168.101.254
+set route  10.0.0.0/16 interface ethernet1 gateway 192.168.101.254
+set route  10.10.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.8.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.5.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  172.16.40.0/24 interface ethernet1 gateway 192.168.101.254
+set route  172.16.41.0/24 interface ethernet1 gateway 192.168.101.254
+set route  192.168.40.0/24 interface ethernet1 gateway 192.168.101.254
+set route  192.168.120.0/24 interface ethernet1 gateway 192.168.101.254
+set route  192.168.121.0/24 interface ethernet1 gateway 192.168.101.254
+set route  192.168.254.0/24 interface ethernet1 gateway 192.168.101.254
+set route  10.40.0.0/16 interface ethernet1 gateway 192.168.101.254
+set route  10.41.0.0/16 interface ethernet1 gateway 192.168.101.254
+set route  192.168.3.0/24 interface ethernet1 gateway 192.168.101.254
+set route  192.168.10.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.11.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.12.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.13.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.14.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.15.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.16.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.17.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.9.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.133.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.136.254.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.37.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.55.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.56.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.57.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  192.168.58.0/24 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.91.254.254/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.92.254.254/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.93.254.254/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.94.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.95.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.96.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.97.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.98.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  10.99.0.0/16 interface ethernet1 gateway 192.168.101.254 preference 20
+set route  172.16.2.0/24 interface ethernet3 gateway 172.16.1.4 preference 20
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

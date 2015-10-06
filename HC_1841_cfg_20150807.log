@@ -1,0 +1,107 @@
+version 12.4
+service timestamps debug datetime localtime
+service timestamps log datetime localtime
+service password-encryption
+!
+hostname HC_1841_router
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 8192 debugging
+enable secret 5 $1$eYZO$FY2pW6xYAPJsqj2UEqN9u/
+!
+no aaa new-model
+!
+resource policy
+!
+clock timezone taipei 8
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+ip subnet-zero
+ip cef
+!
+!
+no ip dhcp use vrf connected
+!
+!
+no ip domain lookup
+!
+username genesis password 7 151F0A02052D2E3679
+username jayson password 7 154752552426242B38
+!
+!
+class-map match-all VOIP_class
+ match access-group name VOIP_ACL
+class-map match-all VNC_class
+ match access-group name VNC_ACL
+!
+!
+policy-map VOIP_policy-map
+ class VOIP_class
+  priority 400
+ class VNC_class
+  priority 200
+policy-map to-TP-QOS_policy-map
+ class class-default
+  shape average 2000000 125000 125000
+  shape max-buffers 10
+  service-policy VOIP_policy-map
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.254.13 255.255.255.240
+ ip rip advertise 10
+ ip route-cache flow
+ duplex auto
+ speed auto
+ service-policy output to-TP-QOS_policy-map
+!
+interface FastEthernet0/1
+ ip address 192.168.254.34 255.255.255.240
+ ip rip advertise 10
+ duplex auto
+ speed auto
+ no mop enabled
+!
+router rip
+ version 2
+ timers basic 10 40 40 60
+ passive-interface default
+ network 192.168.254.0
+ neighbor 192.168.254.33
+ neighbor 192.168.254.14
+ no auto-summary
+!
+ip classless
+ip route 192.168.0.0 255.255.255.0 192.168.254.33
+!
+no ip http server
+!
+ip access-list extended VNC_ACL
+ permit tcp any any eq 5800
+ permit tcp any any eq 5900
+ip access-list extended VOIP_ACL
+ permit ip 172.16.11.0 0.0.0.255 172.16.41.0 0.0.0.255
+!
+snmp-server community public RO
+snmp-server community ^loop^ RO
+snmp-server community string RO
+snmp-server community community RO
+snmp-server community snmp RO
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ password 7 03085404162F791416
+ login local
+!
+ntp clock-period 17178553
+ntp server 192.168.254.17
+end
